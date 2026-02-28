@@ -1,9 +1,9 @@
-import { switchOrSeverityorSeverityAndStringSchema } from '../schemas'
-import Schema from '../schema'
-import Rule from '../rule'
-import { RawSchema, AcceptedSchema } from '../types'
-import Document from '../document'
-import Line from '../line'
+import { switchOrSeverityorSeverityAndStringSchema } from '../schemas.js'
+import Schema from '../schema.js'
+import Rule from '../rule.js'
+import { RawSchema, AcceptedSchema } from '../types.js'
+import Document from '../document.js'
+import Line from '../line.js'
 
 export default class NoTypographerQuotes implements Rule {
   public readonly name: string = 'no-typographer-quotes'

@@ -1,8 +1,8 @@
 import { writeFileSync } from 'node:fs'
 import path from 'node:path'
 
-import Reporter from './reporter'
-import logger from '../logger'
+import Reporter from './reporter.js'
+import logger from '../logger.js'
 
 export default class JSONReporter extends Reporter {
   public write = (): void => {

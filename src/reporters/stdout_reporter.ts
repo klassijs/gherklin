@@ -1,8 +1,8 @@
 import chalk from 'chalk'
 
-import { LintError } from '../types'
-import Reporter from './reporter'
-import logger from '../logger'
+import { LintError } from '../types.js'
+import Reporter from './reporter.js'
+import logger from '../logger.js'
 
 export default class STDOUTReporter extends Reporter {
   public override write = (): void => {

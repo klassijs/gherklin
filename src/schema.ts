@@ -1,6 +1,6 @@
 import { z } from 'zod'
 
-import { GherkinKeywordNumericals, RawSchema, RuleArguments, Severity, Switch } from './types'
+import { GherkinKeywordNumericals, RawSchema, RuleArguments, Severity, Switch } from './types.js'
 
 export default class Schema {
   private readonly rawSchema: RawSchema

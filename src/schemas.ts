@@ -1,6 +1,6 @@
 import { z } from 'zod'
 
-import { Severity, Switch } from './types'
+import { Severity, Switch } from './types.js'
 
 export const keywordInts = z
   .object({

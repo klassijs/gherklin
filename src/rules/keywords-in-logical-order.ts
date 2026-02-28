@@ -1,73 +1,77 @@
 import { dialects } from '@cucumber/gherkin'
 
-import { switchOrSeveritySchema } from '../schemas'
-import Schema from '../schema'
-import Rule from '../rule'
-import { RawSchema, AcceptedSchema } from '../types'
-import Document from '../document'
+import { switchOrSeveritySchema } from '../schemas.js'
+import Schema from '../schema.js'
+import Rule from '../rule.js'
+import { RawSchema, AcceptedSchema } from '../types.js'
+import Document from '../document.js'
 
 export default class KeywordsInLogicalOrder implements Rule {
-  public readonly name: string = 'keywords-in-logical-order'
+    public readonly name: string = 'keywords-in-logical-order'
+    public readonly acceptedSchema: AcceptedSchema = switchOrSeveritySchema
+    public readonly schema: Schema
 
-  public readonly acceptedSchema: AcceptedSchema = switchOrSeveritySchema
+    public constructor(rawSchema: RawSchema) {
+        this.schema = new Schema(rawSchema)
+    }
 
-  public readonly schema: Schema
+    public async run(document: Document): Promise<void> {
+        document.feature.children.forEach((child) => {
+            if (!child.scenario) return
 
-  public constructor(rawSchema: RawSchema) {
-    this.schema = new Schema(rawSchema)
-  }
+            // ----- Dialect lookup with safe fallback -----
+            // dialects is a record of language -> keyword arrays (strings with trailing spaces, e.g., 'Given ')
+            const lang = document.feature.language as keyof typeof dialects
+            const dialect = dialects[lang] ?? dialects.en
 
-  public async run(document: Document): Promise<void> {
-    document.feature.children.forEach((child) => {
-      if (!child.scenario) {
-        return
-      }
+            // Explicitly coerce to string[] and filter out the '*' wildcard variant
+            const given: string[] = (dialect.given as string[]).filter((w) => w !== '* ')
+            const when:  string[] = (dialect.when  as string[]).filter((w) => w !== '* ')
+            const then:  string[] = (dialect.then  as string[]).filter((w) => w !== '* ')
+            const and:   string[] = (dialect.and   as string[]).filter((w) => w !== '* ')
+            const but:   string[] = (dialect.but   as string[]).filter((w) => w !== '* ')
 
-      child.scenario.steps.forEach((step, index) => {
-        const nextStep = child.scenario.steps[index + 1]
-        if (!nextStep) {
-          return
-        }
-        const nextTrimmed = nextStep.keyword.trim()
+            // Pre-trimmed sets for error messages
+            const trimmedWhen = when.map((w) => w.trim())
+            const trimmedThen = then.map((w) => w.trim())
+            const trimmedAnd  = and.map((w)  => w.trim())
+            const trimmedBut  = but.map((w)  => w.trim())
 
-        const dialect = dialects[document.feature.language]
-        const given = dialect.given.filter((w) => w !== '* ')
-        const when = dialect.when.filter((w) => w !== '* ')
-        const then = dialect.then.filter((w) => w !== '* ')
-        const and = dialect.and.filter((w) => w !== '* ')
-        const but = dialect.but.filter((w) => w !== '* ')
-        const trimmedWhen = when.map((w) => w.trim())
-        const trimmedThen = then.map((w) => w.trim())
-        const trimmedAnd = and.map((w) => w.trim())
-        const trimmedBut = but.map((w) => w.trim())
+            child.scenario.steps.forEach((step, index) => {
+                const nextStep = child.scenario!.steps[index + 1]
+                if (!nextStep) return
 
-        // Check for Given, followed by When, And or But
-        if (given.includes(step.keyword) && ![...and, ...but, ...when].includes(nextStep.keyword)) {
-          document.addError(
-            this,
-            `Expected "${step.keyword.trim()}" to be followed by "${[...trimmedAnd, ...trimmedBut, ...trimmedWhen].join(', ')}", got "${nextTrimmed}"`,
-            step.location,
-          )
-        }
+                const stepKw = step.keyword // e.g., 'Given ', 'When ', 'Then ', 'And ', 'But '
+                const nextKw = nextStep.keyword
+                const nextTrimmed = nextKw.trim()
 
-        // Check for When, followed by Then, And or But
-        if (when.includes(step.keyword) && ![...and, ...but, ...then].includes(nextStep.keyword)) {
-          document.addError(
-            this,
-            `Expected "${step.keyword.trim()}" to be followed by "${[...trimmedAnd, ...trimmedBut, ...trimmedThen].join(', ')}", got "${nextTrimmed}"`,
-            step.location,
-          )
-        }
+                // Given must be followed by When/And/But
+                if (given.includes(stepKw) && ![...and, ...but, ...when].includes(nextKw)) {
+                    document.addError(
+                        this,
+                        `Expected "${stepKw.trim()}" to be followed by "${[...trimmedAnd, ...trimmedBut, ...trimmedWhen].join(', ')}", got "${nextTrimmed}"`,
+                        step.location,
+                    )
+                }
 
-        // Check for Then, followed by And or When
-        if (then.includes(step.keyword) && ![...and, ...when].includes(nextStep.keyword)) {
-          document.addError(
-            this,
-            `Expected "${step.keyword.trim()}" to be followed by "${[...trimmedAnd, ...trimmedWhen].join(', ')}", got "${nextTrimmed}"`,
-            step.location,
-          )
-        }
-      })
-    })
-  }
+                // When must be followed by Then/And/But
+                if (when.includes(stepKw) && ![...and, ...but, ...then].includes(nextKw)) {
+                    document.addError(
+                        this,
+                        `Expected "${stepKw.trim()}" to be followed by "${[...trimmedAnd, ...trimmedBut, ...trimmedThen].join(', ')}", got "${nextTrimmed}"`,
+                        step.location,
+                    )
+                }
+
+                // Then must be followed by And/When
+                if (then.includes(stepKw) && ![...and, ...when].includes(nextKw)) {
+                    document.addError(
+                        this,
+                        `Expected "${stepKw.trim()}" to be followed by "${[...trimmedAnd, ...trimmedWhen].join(', ')}", got "${nextTrimmed}"`,
+                        step.location,
+                    )
+                }
+            })
+        })
+    }
 }

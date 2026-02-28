@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    // Emit JS into dist/
+    "noEmit": false,
+    "outDir": "dist",
+    "rootDir": ".",
+
+    // Node ESM-friendly compile settings
+    "target": "ES2022",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+
+    // Nice-to-haves
+    "declaration": false,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "strict": true
+  },
+  "include": ["src/**/*.ts", "bin/**/*.ts"],
+  "exclude": ["dist", "node_modules", "tests/**"]
+}

@@ -1,35 +1,43 @@
 import path from 'node:path'
 
-import { switchOrSeveritySchema } from '../schemas'
-import Schema from '../schema'
-import Rule from '../rule'
-import { RawSchema, AcceptedSchema } from '../types'
-import Document from '../document'
+import { switchOrSeveritySchema } from '../schemas.js'
+import Schema from '../schema.js'
+import Rule from '../rule.js'
+import { RawSchema, AcceptedSchema } from '../types.js'
+import Document from '../document.js'
 
 export default class NoDupeFeatures implements Rule {
-  public readonly name: string = 'no-dupe-features'
+    public readonly name: string = 'no-dupe-features'
+    public readonly acceptedSchema: AcceptedSchema = switchOrSeveritySchema
+    public readonly schema: Schema
 
-  public readonly acceptedSchema: AcceptedSchema = switchOrSeveritySchema
+    private features: Map<string, string[]> = new Map()
 
-  public readonly schema: Schema
-
-  private features: Map<string, Array<string>> = new Map()
-
-  public constructor(rawSchema: RawSchema) {
-    this.schema = new Schema(rawSchema)
-  }
-
-  public async run(document: Document): Promise<void> {
-    const featureName = document.feature.name
-    if (!this.features.has(featureName)) {
-      this.features.set(featureName, [path.basename(document.filename)])
-    } else {
-      this.features.set(featureName, [path.basename(document.filename), ...this.features.get(featureName)])
-      document.addError(
-        this,
-        `Found duplicate feature "${featureName}" in "${this.features.get(featureName).join(', ')}".`,
-        document.feature.location,
-      )
+    public constructor(rawSchema: RawSchema) {
+        this.schema = new Schema(rawSchema)
     }
-  }
+
+    public async run(document: Document): Promise<void> {
+        const featureName = document.feature.name
+        const currentFile = path.basename(document.filename)
+
+        if (!this.features.has(featureName)) {
+            // first time we see this featureName
+            this.features.set(featureName, [currentFile])
+            return
+        }
+
+        // Merge current file into existing list (dedupe just in case)
+        const prev = this.features.get(featureName) ?? []
+        const next = [...prev, currentFile]
+        this.features.set(featureName, next)
+
+        // Report duplicates with a clear, joined list
+        const listed = next.join(', ')
+        document.addError(
+            this,
+            `Found duplicate feature "${featureName}" in "${listed}".`,
+            document.feature.location,
+        )
+    }
 }

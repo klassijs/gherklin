@@ -2,13 +2,6 @@
   "name": "gherklin",
   "version": "1.0.14",
   "description": "A linter for Gherkin syntax",
-  "scripts": {
-    "test": "mocha",
-    "acceptance": "node --import tsx ./node_modules/@cucumber/cucumber/bin/cucumber-js --config tests/acceptance/cucumber.mjs",
-    "eslint": "node_modules/.bin/eslint",
-    "eslint:fix": "node_modules/.bin/eslint --fix",
-    "gherklin": "npx tsx ./bin/gherklin"
-  },
   "engines": {
     "node": ">=22"
   },
@@ -18,7 +11,18 @@
     "linter"
   ],
   "main": "./src/index.ts",
-  "bin": "./bin/gherklin",
+  "scripts": {
+    "test": "mocha",
+    "acceptance": "node --import tsx ./node_modules/@cucumber/cucumber/bin/cucumber-js --config tests/acceptance/cucumber.mjs",
+    "eslint": "node_modules/.bin/eslint",
+    "eslint:fix": "node_modules/.bin/eslint --fix",
+    "gherklin": "npx tsx ./bin/gherklin",
+    "build": "tsc -p tsconfig.build.json",
+    "prepublishOnly": "npm run build"
+  },
+  "bin": {
+    "gherklin": "dist/bin/gherklin.js"
+  },
   "files": [
     "src"
   ],

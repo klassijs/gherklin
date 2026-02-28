@@ -1,8 +1,8 @@
-import { offOrNumberOrSeverityAndNumber } from '../schemas'
-import Schema from '../schema'
-import Rule from '../rule'
-import { RawSchema, AcceptedSchema } from '../types'
-import Document from '../document'
+import { offOrNumberOrSeverityAndNumber } from '../schemas.js'
+import Schema from '../schema.js'
+import Rule from '../rule.js'
+import { RawSchema, AcceptedSchema } from '../types.js'
+import Document from '../document.js'
 
 export default class MaxScenarios implements Rule {
   public readonly name: string = 'max-scenarios'

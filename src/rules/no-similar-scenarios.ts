@@ -1,67 +1,67 @@
-import { offOrNumberOrSeverityOrSeverityAndNumber } from '../schemas'
-import Schema from '../schema'
-import Rule from '../rule'
-import { RawSchema, AcceptedSchema } from '../types'
-import Document from '../document'
-import { levenshtein } from '../utils'
+import { offOrNumberOrSeverityOrSeverityAndNumber } from '../schemas.js'
+import Schema from '../schema.js'
+import Rule from '../rule.js'
+import { RawSchema, AcceptedSchema } from '../types.js'
+import Document from '../document.js'
+import { levenshtein } from '../utils.js'
 
 export default class NoSimilarScenarios implements Rule {
-  public readonly name: string = 'no-similar-scenarios'
+    public readonly name: string = 'no-similar-scenarios'
+    public readonly acceptedSchema: AcceptedSchema = offOrNumberOrSeverityOrSeverityAndNumber
+    public readonly schema: Schema
 
-  public readonly acceptedSchema: AcceptedSchema = offOrNumberOrSeverityOrSeverityAndNumber
+    private readonly defaultThreshold = 80
 
-  public readonly schema: Schema
+    public constructor(rawSchema: RawSchema) {
+        this.schema = new Schema(rawSchema)
+    }
 
-  private defaultThreshold: number = 80
+    public async run(document: Document): Promise<void> {
+        // Resolve threshold: allow args to override if it's a number
+        const resolvedThreshold =
+            (typeof this.schema.args === 'number' ? this.schema.args : this.defaultThreshold)
 
-  public constructor(rawSchema: RawSchema) {
-    this.schema = new Schema(rawSchema)
-  }
+        document.feature.children.forEach((child) => {
+            if (!child.scenario) return
+            // Capture the scenario to preserve the type‑narrowing throughout
+            const scenario = child.scenario
+            const { steps: thisSteps } = scenario
 
-  public async run(document: Document): Promise<void> {
-    document.feature.children.forEach((child) => {
-      if (!child.scenario) {
-        return
-      }
+            // Build a list of the *other* scenarios (exclude current)
+            const otherScenarios = document.feature.children
+                .map(c => c.scenario)
+                .filter((s): s is NonNullable<typeof s> => Boolean(s && s.id !== scenario.id))
 
-      const { steps: thisSteps } = child.scenario
-      const otherScenarios = document.feature.children
-        .filter((c) => c.scenario !== undefined)
-        .filter((c) => c.scenario.id !== child.scenario.id)
-        .map((c) => c.scenario)
+            // Compare current scenario against each "other"
+            otherScenarios.forEach((other) => {
+                // Compute Levenshtein totals for this pair only
+                let pairLevTotal = 0
+                let pairMaxPossible = 0
 
-      let totalLev = 0
-      let maxPossibleLev = 0
+                thisSteps.forEach((step, i) => {
+                    const nextStep = other.steps[i]
+                    if (!nextStep) return
 
-      otherScenarios.forEach((other) => {
-        totalLev += thisSteps
-          .map((step, i): number => {
-            const nextStep = other?.steps[i]
-            if (!nextStep) {
-              return 0
-            }
+                    const left  = `${step.keyword}${step.text}`
+                    const right = `${nextStep.keyword}${nextStep.text}`
 
-            const comparison = [`${step.keyword}${step.text}`, `${nextStep.keyword}${nextStep.text}`]
-            maxPossibleLev += comparison[0].length + comparison[1].length
-            return levenshtein(comparison[0], comparison[1])
-          })
-          .reduce((a, b) => a + b, 0)
+                    pairMaxPossible += left.length + right.length
+                    pairLevTotal    += levenshtein(left, right)
+                })
 
-        const percentage = 100 - (totalLev / maxPossibleLev) * 100
+                // Avoid divide-by-zero if no comparable steps
+                if (pairMaxPossible === 0) return
 
-        let threshold = this.defaultThreshold
-        if (this.schema.args) {
-          threshold = this.schema.args as number
-        }
+                const percentage = 100 - (pairLevTotal / pairMaxPossible) * 100
 
-        if (percentage > threshold) {
-          document.addError(
-            this,
-            `Scenario "${child.scenario.name}" is too similar (> ${threshold}%) to scenario "${other.name}".`,
-            child.scenario.location,
-          )
-        }
-      })
-    })
-  }
+                if (percentage > resolvedThreshold) {
+                    document.addError(
+                        this,
+                        `Scenario "${scenario.name}" is too similar (> ${resolvedThreshold}%) to scenario "${other.name}".`,
+                        scenario.location,
+                    )
+                }
+            })
+        })
+    }
 }

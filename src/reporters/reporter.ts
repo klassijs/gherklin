@@ -1,35 +1,38 @@
-import { LintError, ReporterConfig } from '../types'
+import type { ReporterConfig, LintError } from '../types.js'
 
-export default class Reporter {
-  protected readonly config: ReporterConfig
+export default abstract class Reporter {
+    protected config: ReporterConfig
+    public errors: Map<string, LintError[]> = new Map()
 
-  constructor(config?: ReporterConfig) {
-    this.config = config
-  }
-
-  public errors: Map<string, Array<LintError>> = new Map()
-
-  public addErrors(key: string, errors: Array<LintError>): void {
-    if (this.errors.has(key)) {
-      this.errors.set(key, [...errors, ...this.errors.get(key)])
-      return
+    constructor(config?: ReporterConfig) {
+        // Provide a robust default; adjust fields to match your ReporterConfig shape
+        this.config = {
+            type: 'stdout',                     // default reporter type
+            configDirectory: process.cwd(),     // fallback directory
+            ...(config ?? {}),                  // override with user-supplied fields
+        } as ReporterConfig
     }
 
-    this.errors.set(key, errors)
-  }
+    /**
+     * Adds lint errors for a file, merging with any existing ones.
+     */
+    public addErrors(key: string, errors?: LintError[]) {
+        const prev = this.errors.get(key) ?? []
+        const next = [...(errors ?? []), ...prev]
+        this.errors.set(key, next)
+    }
 
-  /**
-   * Since errors are grouped under their file name, this is a helper function
-   * to return the total number of errors across all files
-   */
-  public errorCount(): number {
-    let count = 0
-    this.errors.forEach((err) => {
-      count += err.length
-    })
+    /**
+     * Number of collected errors across all files.
+     */
+    public errorCount(): number {
+        let count = 0
+        for (const list of this.errors.values()) count += list.length
+        return count
+    }
 
-    return count
-  }
-
-  public write = (): void => {}
+    /**
+     * Implemented by concrete reporters (stdout/html/json/null).
+     */
+    public abstract write(): void
 }

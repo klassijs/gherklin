@@ -1,8 +1,8 @@
-import { offOrStringArrayOrSeverityAndStringArray } from '../schemas'
-import Schema from '../schema'
-import Rule from '../rule'
-import { RawSchema, AcceptedSchema } from '../types'
-import Document from '../document'
+import { offOrStringArrayOrSeverityAndStringArray } from '../schemas.js'
+import Schema from '../schema.js'
+import Rule from '../rule.js'
+import { RawSchema, AcceptedSchema } from '../types.js'
+import Document from '../document.js'
 
 export default class AllowedTags implements Rule {
   public readonly name: string = 'allowed-tags'

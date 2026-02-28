@@ -2,8 +2,8 @@ import { readFileSync, writeFileSync } from 'node:fs'
 import path from 'node:path'
 import Handlebars from 'handlebars'
 
-import Reporter from './reporter'
-import { Report, ReportFile, ReportLine, Severity } from '../types'
+import Reporter from './reporter.js'
+import { Report, ReportFile, ReportLine, Severity } from '../types.js'
 
 export default class HTMLReporter extends Reporter {
   public override write = (): void => {
