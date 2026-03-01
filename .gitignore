@@ -2,3 +2,5 @@ node_modules
 cucumber-report.html
 tests/acceptance/tmp
 .idea
+.github
+examples/*
