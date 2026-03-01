@@ -191,3 +191,4 @@ function xdgCandidates() {
     }
     return out;
 }
+//# sourceMappingURL=resolveConfig.js.map

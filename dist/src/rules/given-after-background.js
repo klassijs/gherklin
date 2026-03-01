@@ -24,3 +24,4 @@ export default class GivenAfterBackground {
         });
     }
 }
+//# sourceMappingURL=given-after-background.js.map

@@ -47,3 +47,4 @@ export default class STDOUTReporter extends Reporter {
         }
     };
 }
+//# sourceMappingURL=stdout_reporter.js.map

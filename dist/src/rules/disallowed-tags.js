@@ -29,3 +29,4 @@ export default class DisallowedTags {
         });
     }
 }
+//# sourceMappingURL=disallowed-tags.js.map

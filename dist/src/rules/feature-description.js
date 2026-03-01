@@ -14,3 +14,4 @@ export default class FeatureDescription {
         }
     }
 }
+//# sourceMappingURL=feature-description.js.map

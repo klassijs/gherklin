@@ -115,3 +115,4 @@ export default class Document {
         this.parseGherkin(content);
     };
 }
+//# sourceMappingURL=document.js.map

@@ -40,3 +40,4 @@ Options:
   -v, --version         Print version
 `);
 }
+//# sourceMappingURL=args.js.map

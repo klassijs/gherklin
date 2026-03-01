@@ -4,3 +4,4 @@ export { default as Rule } from './rule.js';
 export { default as Schema } from './schema.js';
 export { Severity, Switch } from './types.js';
 export * as Schemas from './schemas.js';
+//# sourceMappingURL=index.js.map

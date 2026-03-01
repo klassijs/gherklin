@@ -11,3 +11,4 @@ const logger = () => {
     });
 };
 export default logger();
+//# sourceMappingURL=logger.js.map

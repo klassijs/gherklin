@@ -27,3 +27,4 @@ export default class Reporter {
         return count;
     }
 }
+//# sourceMappingURL=reporter.js.map

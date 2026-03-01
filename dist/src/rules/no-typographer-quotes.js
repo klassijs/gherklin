@@ -34,3 +34,4 @@ export default class NoTypographerQuotes {
         await document.regenerate();
     }
 }
+//# sourceMappingURL=no-typographer-quotes.js.map

@@ -20,3 +20,4 @@ export default class MaxScenarios {
         }
     }
 }
+//# sourceMappingURL=max-scenarios.js.map

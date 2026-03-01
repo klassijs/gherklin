@@ -71,3 +71,4 @@ export default class HTMLReporter extends Reporter {
         return line;
     }
 }
+//# sourceMappingURL=html_reporter.js.map

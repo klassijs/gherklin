@@ -45,3 +45,4 @@ export default class AlignedDatatables {
         });
     }
 }
+//# sourceMappingURL=aligned-datatables.js.map

@@ -16,3 +16,4 @@ export default class NoEmptyFile {
         }
     }
 }
+//# sourceMappingURL=no-empty-file.js.map

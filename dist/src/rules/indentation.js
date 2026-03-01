@@ -117,3 +117,4 @@ export default class Indentation {
         await document.regenerate();
     }
 }
+//# sourceMappingURL=indentation.js.map

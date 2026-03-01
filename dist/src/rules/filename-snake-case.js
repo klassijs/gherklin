@@ -22,3 +22,4 @@ export default class FilenameSnakeCase {
         }
     }
 }
+//# sourceMappingURL=filename-snake-case.js.map

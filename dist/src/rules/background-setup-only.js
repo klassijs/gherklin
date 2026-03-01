@@ -20,3 +20,4 @@ export default class BackgroundSetupOnly {
         });
     }
 }
+//# sourceMappingURL=background-setup-only.js.map

@@ -28,3 +28,4 @@ export default class NoFullStop {
         await document.regenerate();
     }
 }
+//# sourceMappingURL=no-full-stop.js.map

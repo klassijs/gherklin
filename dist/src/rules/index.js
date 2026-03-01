@@ -6,3 +6,4 @@ export default {
     indentation,
     noBackgroundOnly,
 };
+//# sourceMappingURL=index.js.map

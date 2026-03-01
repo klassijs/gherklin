@@ -18,3 +18,4 @@ export default class NoBackgroundOnly {
         });
     }
 }
+//# sourceMappingURL=no-background-only.js.map

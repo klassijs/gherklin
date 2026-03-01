@@ -40,3 +40,4 @@ export default class Schema {
         return [];
     }
 }
+//# sourceMappingURL=schema.js.map

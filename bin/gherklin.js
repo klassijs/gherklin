@@ -37,6 +37,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+// ... your CLI code that imports from "gherklin" (which now points to dist)
 var node_fs_1 = require("node:fs");
 var node_path_1 = require("node:path");
 var node_fs_2 = require("node:fs");

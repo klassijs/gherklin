@@ -55,3 +55,4 @@ export default class NoInconsistentQuotes {
         await document.regenerate();
     }
 }
+//# sourceMappingURL=no-inconsistent-quotes.js.map

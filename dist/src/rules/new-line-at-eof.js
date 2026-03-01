@@ -23,3 +23,4 @@ export default class NewLineAtEof {
         await document.regenerate();
     }
 }
+//# sourceMappingURL=new-line-at-eof.js.map

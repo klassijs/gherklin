@@ -14,3 +14,4 @@ export default class JSONReporter extends Reporter {
         });
     };
 }
+//# sourceMappingURL=json_reporter.js.map

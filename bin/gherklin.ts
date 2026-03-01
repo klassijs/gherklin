@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+// ... your CLI code that imports from "gherklin" (which now points to dist)
 import fs from 'node:fs';
 import path from 'node:path';
 import { readFileSync } from 'node:fs';

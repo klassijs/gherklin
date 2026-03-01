@@ -8,3 +8,4 @@ export default class Rule {
         this.schema = schema;
     }
 }
+//# sourceMappingURL=rule.js.map

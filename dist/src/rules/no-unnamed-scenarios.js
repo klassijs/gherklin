@@ -18,3 +18,4 @@ export default class NoUnnamedScenarios {
         });
     }
 }
+//# sourceMappingURL=no-unnamed-scenarios.js.map

@@ -26,3 +26,4 @@ export default class NoDupeFeatures {
         document.addError(this, `Found duplicate feature "${featureName}" in "${listed}".`, document.feature.location);
     }
 }
+//# sourceMappingURL=no-dupe-features.js.map

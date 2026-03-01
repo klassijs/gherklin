@@ -29,3 +29,4 @@ export default class NoTrailingSpaces {
         await document.regenerate();
     }
 }
+//# sourceMappingURL=no-trailing-spaces.js.map

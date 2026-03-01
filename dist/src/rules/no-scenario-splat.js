@@ -20,3 +20,4 @@ export default class NoScenarioSplat {
         });
     }
 }
+//# sourceMappingURL=no-scenario-splat.js.map

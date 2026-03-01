@@ -23,3 +23,4 @@ export default class FilenameKebabCase {
         }
     }
 }
+//# sourceMappingURL=filename-kebab-case.js.map
