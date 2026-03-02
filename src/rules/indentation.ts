@@ -19,6 +19,13 @@ export default class Indentation implements Rule {
         this.schema = new Schema(rawSchema)
     }
 
+    /**
+     * Parser columns are 1-based; config uses 0-based (0 = first column, no spaces).
+     */
+    private col0(parserCol: number | undefined): number {
+        return (parserCol ?? 1) - 1
+    }
+
     public async run(document: Document): Promise<void> {
         const args = this.schema.args as GherkinKeywordNumericals
         if (!args) return
@@ -29,22 +36,22 @@ export default class Indentation implements Rule {
 
         // ----- Feature-level checks -----
         if (args.featureTag !== undefined && document.feature.tags.length) {
-            const firstTagCol = document.feature.tags[0].location.column
-            if (firstTagCol !== args.featureTag) {
+            const got = this.col0(document.feature.tags[0].location.column)
+            if (got !== args.featureTag) {
                 document.addError(
                     this,
-                    `Invalid indentation for feature tags. Got ${firstTagCol}, wanted ${args.featureTag}`,
+                    `Invalid indentation for feature tags. Got ${got}, wanted ${args.featureTag}`,
                     document.feature.tags[0].location,
                 )
             }
         }
 
         if (args.feature !== undefined) {
-            const col = document.feature.location.column
-            if (col !== args.feature) {
+            const got = this.col0(document.feature.location.column)
+            if (got !== args.feature) {
                 document.addError(
                     this,
-                    `Invalid indentation for feature. Got ${col}, wanted ${args.feature}`,
+                    `Invalid indentation for feature. Got ${got}, wanted ${args.feature}`,
                     document.feature.location,
                 )
             }
@@ -54,11 +61,11 @@ export default class Indentation implements Rule {
         document.feature.children.forEach((child) => {
             // Background block
             if (child.background && args.background !== undefined) {
-                const bgCol = child.background.location.column
-                if (bgCol !== args.background) {
+                const got = this.col0(child.background.location.column)
+                if (got !== args.background) {
                     document.addError(
                         this,
-                        `Invalid indentation for background. Got ${bgCol}, wanted ${args.background}`,
+                        `Invalid indentation for background. Got ${got}, wanted ${args.background}`,
                         child.background.location,
                     )
                 }
@@ -73,22 +80,22 @@ export default class Indentation implements Rule {
 
                 const expectedScenario = numArg(scenarioType)
                 if (expectedScenario !== undefined) {
-                    const col = child.scenario.location.column
-                    if (col !== expectedScenario) {
+                    const got = this.col0(child.scenario.location.column)
+                    if (got !== expectedScenario) {
                         document.addError(
                             this,
-                            `Invalid indentation for ${scenarioType}. Got ${col}, wanted ${expectedScenario}`,
+                            `Invalid indentation for ${scenarioType}. Got ${got}, wanted ${expectedScenario}`,
                             child.scenario.location,
                         )
                     }
                 }
 
                 if (args.scenarioTag !== undefined && child.scenario.tags.length) {
-                    const tagCol = child.scenario.tags[0].location.column
-                    if (tagCol !== args.scenarioTag) {
+                    const got = this.col0(child.scenario.tags[0].location.column)
+                    if (got !== args.scenarioTag) {
                         document.addError(
                             this,
-                            `Invalid indentation for ${scenarioType} tags. Got ${tagCol}, wanted ${args.scenarioTag}`,
+                            `Invalid indentation for ${scenarioType} tags. Got ${got}, wanted ${args.scenarioTag}`,
                             child.scenario.tags[0].location,
                         )
                     }
@@ -101,10 +108,11 @@ export default class Indentation implements Rule {
                     const key = step.keyword.toLowerCase()
                     const expected = numArg(key)
                     if (expected !== undefined) {
-                        if (step.location.column !== expected) {
+                        const got = this.col0(step.location.column)
+                        if (got !== expected) {
                             document.addError(
                                 this,
-                                `Invalid indentation for ${key}. Got ${step.location.column}, wanted ${expected}`,
+                                `Invalid indentation for ${key}. Got ${got}, wanted ${expected}`,
                                 step.location, // use the step location for precision
                             )
                         }
@@ -118,21 +126,22 @@ export default class Indentation implements Rule {
                     const stepNormalized = step.keyword.toLowerCase().trimEnd()
                     const expected = numArg(stepNormalized)
                     if (expected !== undefined) {
-                        if (step.location.column !== expected) {
+                        const got = this.col0(step.location.column)
+                        if (got !== expected) {
                             document.addError(
                                 this,
-                                `Invalid indentation for ${stepNormalized}. Got ${step.location.column}, wanted ${expected}`,
+                                `Invalid indentation for ${stepNormalized}. Got ${got}, wanted ${expected}`,
                                 step.location,
                             )
                         }
                     }
 
                     if (step.dataTable && args.dataTable !== undefined) {
-                        const dtCol = step.dataTable.location.column
-                        if (dtCol !== args.dataTable) {
+                        const got = this.col0(step.dataTable.location.column)
+                        if (got !== args.dataTable) {
                             document.addError(
                                 this,
-                                `Invalid indentation for ${stepNormalized} data table. Got ${dtCol}, wanted ${args.dataTable}`,
+                                `Invalid indentation for ${stepNormalized} data table. Got ${got}, wanted ${args.dataTable}`,
                                 step.dataTable.location,
                             )
                         }
@@ -142,11 +151,11 @@ export default class Indentation implements Rule {
                 // Examples (Scenario Outline only)
                 child.scenario.examples?.forEach((example) => {
                     if (example.tableHeader && args.exampleTableHeader !== undefined) {
-                        const hdrCol = example.tableHeader.location.column
-                        if (hdrCol !== args.exampleTableHeader) {
+                        const got = this.col0(example.tableHeader.location.column)
+                        if (got !== args.exampleTableHeader) {
                             document.addError(
                                 this,
-                                `Invalid indentation for example table header. Got ${hdrCol}, wanted ${args.exampleTableHeader}`,
+                                `Invalid indentation for example table header. Got ${got}, wanted ${args.exampleTableHeader}`,
                                 example.tableHeader.location,
                             )
                         }
@@ -154,11 +163,11 @@ export default class Indentation implements Rule {
 
                     if (example.tableBody && args.exampleTableBody !== undefined) {
                         example.tableBody.forEach((row) => {
-                            const rowCol = row.location.column
-                            if (rowCol !== args.exampleTableBody) {
+                            const got = this.col0(row.location.column)
+                            if (got !== args.exampleTableBody) {
                                 document.addError(
                                     this,
-                                    `Invalid indentation for example table row. Got ${rowCol}, wanted ${args.exampleTableBody}`,
+                                    `Invalid indentation for example table row. Got ${got}, wanted ${args.exampleTableBody}`,
                                     row.location,
                                 )
                             }
@@ -177,9 +186,8 @@ export default class Indentation implements Rule {
         document.lines.forEach((line: Line, index: number) => {
             const expected = numArg(line.safeKeyword)
             if (typeof expected === 'number') {
-                // lines store indentation as "count of spaces before keyword",
-                // expected is a 1-based "column"; subtract 1 to get indentation.
-                document.lines[index].indentation = expected - 1
+                // Config is 0-based (0 = no spaces); lines store indentation as space count.
+                document.lines[index].indentation = expected
             }
         })
 

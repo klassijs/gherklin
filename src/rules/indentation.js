@@ -44,9 +44,15 @@ var Indentation = /** @class */ (function () {
         this.acceptedSchema = schemas_js_1.offOrKeywordIntsOrSeverityAndKeywordInts;
         this.schema = new schema_js_1.default(rawSchema);
     }
+    /**
+     * Parser columns are 1-based; config uses 0-based (0 = first column, no spaces).
+     */
+    Indentation.prototype.col0 = function (parserCol) {
+        return (parserCol !== null && parserCol !== void 0 ? parserCol : 1) - 1;
+    };
     Indentation.prototype.run = function (document) {
         return __awaiter(this, void 0, void 0, function () {
-            var args, numArg, firstTagCol, col;
+            var args, numArg, got, got;
             var _this = this;
             return __generator(this, function (_a) {
                 args = this.schema.args;
@@ -57,15 +63,15 @@ var Indentation = /** @class */ (function () {
                 };
                 // ----- Feature-level checks -----
                 if (args.featureTag !== undefined && document.feature.tags.length) {
-                    firstTagCol = document.feature.tags[0].location.column;
-                    if (firstTagCol !== args.featureTag) {
-                        document.addError(this, "Invalid indentation for feature tags. Got ".concat(firstTagCol, ", wanted ").concat(args.featureTag), document.feature.tags[0].location);
+                    got = this.col0(document.feature.tags[0].location.column);
+                    if (got !== args.featureTag) {
+                        document.addError(this, "Invalid indentation for feature tags. Got ".concat(got, ", wanted ").concat(args.featureTag), document.feature.tags[0].location);
                     }
                 }
                 if (args.feature !== undefined) {
-                    col = document.feature.location.column;
-                    if (col !== args.feature) {
-                        document.addError(this, "Invalid indentation for feature. Got ".concat(col, ", wanted ").concat(args.feature), document.feature.location);
+                    got = this.col0(document.feature.location.column);
+                    if (got !== args.feature) {
+                        document.addError(this, "Invalid indentation for feature. Got ".concat(got, ", wanted ").concat(args.feature), document.feature.location);
                     }
                 }
                 // ----- Children (Backgrounds / Scenarios) -----
@@ -73,9 +79,9 @@ var Indentation = /** @class */ (function () {
                     var _a;
                     // Background block
                     if (child.background && args.background !== undefined) {
-                        var bgCol = child.background.location.column;
-                        if (bgCol !== args.background) {
-                            document.addError(_this, "Invalid indentation for background. Got ".concat(bgCol, ", wanted ").concat(args.background), child.background.location);
+                        var got = _this.col0(child.background.location.column);
+                        if (got !== args.background) {
+                            document.addError(_this, "Invalid indentation for background. Got ".concat(got, ", wanted ").concat(args.background), child.background.location);
                         }
                     }
                     // Scenario (or Scenario Outline)
@@ -85,15 +91,15 @@ var Indentation = /** @class */ (function () {
                             : 'scenario';
                         var expectedScenario = numArg(scenarioType);
                         if (expectedScenario !== undefined) {
-                            var col = child.scenario.location.column;
-                            if (col !== expectedScenario) {
-                                document.addError(_this, "Invalid indentation for ".concat(scenarioType, ". Got ").concat(col, ", wanted ").concat(expectedScenario), child.scenario.location);
+                            var got = _this.col0(child.scenario.location.column);
+                            if (got !== expectedScenario) {
+                                document.addError(_this, "Invalid indentation for ".concat(scenarioType, ". Got ").concat(got, ", wanted ").concat(expectedScenario), child.scenario.location);
                             }
                         }
                         if (args.scenarioTag !== undefined && child.scenario.tags.length) {
-                            var tagCol = child.scenario.tags[0].location.column;
-                            if (tagCol !== args.scenarioTag) {
-                                document.addError(_this, "Invalid indentation for ".concat(scenarioType, " tags. Got ").concat(tagCol, ", wanted ").concat(args.scenarioTag), child.scenario.tags[0].location);
+                            var got = _this.col0(child.scenario.tags[0].location.column);
+                            if (got !== args.scenarioTag) {
+                                document.addError(_this, "Invalid indentation for ".concat(scenarioType, " tags. Got ").concat(got, ", wanted ").concat(args.scenarioTag), child.scenario.tags[0].location);
                             }
                         }
                     }
@@ -103,8 +109,9 @@ var Indentation = /** @class */ (function () {
                             var key = step.keyword.toLowerCase();
                             var expected = numArg(key);
                             if (expected !== undefined) {
-                                if (step.location.column !== expected) {
-                                    document.addError(_this, "Invalid indentation for ".concat(key, ". Got ").concat(step.location.column, ", wanted ").concat(expected), step.location);
+                                var got = _this.col0(step.location.column);
+                                if (got !== expected) {
+                                    document.addError(_this, "Invalid indentation for ".concat(key, ". Got ").concat(got, ", wanted ").concat(expected), step.location);
                                 }
                             }
                         });
@@ -115,30 +122,31 @@ var Indentation = /** @class */ (function () {
                             var stepNormalized = step.keyword.toLowerCase().trimEnd();
                             var expected = numArg(stepNormalized);
                             if (expected !== undefined) {
-                                if (step.location.column !== expected) {
-                                    document.addError(_this, "Invalid indentation for ".concat(stepNormalized, ". Got ").concat(step.location.column, ", wanted ").concat(expected), step.location);
+                                var got = _this.col0(step.location.column);
+                                if (got !== expected) {
+                                    document.addError(_this, "Invalid indentation for ".concat(stepNormalized, ". Got ").concat(got, ", wanted ").concat(expected), step.location);
                                 }
                             }
                             if (step.dataTable && args.dataTable !== undefined) {
-                                var dtCol = step.dataTable.location.column;
-                                if (dtCol !== args.dataTable) {
-                                    document.addError(_this, "Invalid indentation for ".concat(stepNormalized, " data table. Got ").concat(dtCol, ", wanted ").concat(args.dataTable), step.dataTable.location);
+                                var got = _this.col0(step.dataTable.location.column);
+                                if (got !== args.dataTable) {
+                                    document.addError(_this, "Invalid indentation for ".concat(stepNormalized, " data table. Got ").concat(got, ", wanted ").concat(args.dataTable), step.dataTable.location);
                                 }
                             }
                         });
                         // Examples (Scenario Outline only)
                         (_a = child.scenario.examples) === null || _a === void 0 ? void 0 : _a.forEach(function (example) {
                             if (example.tableHeader && args.exampleTableHeader !== undefined) {
-                                var hdrCol = example.tableHeader.location.column;
-                                if (hdrCol !== args.exampleTableHeader) {
-                                    document.addError(_this, "Invalid indentation for example table header. Got ".concat(hdrCol, ", wanted ").concat(args.exampleTableHeader), example.tableHeader.location);
+                                var got = _this.col0(example.tableHeader.location.column);
+                                if (got !== args.exampleTableHeader) {
+                                    document.addError(_this, "Invalid indentation for example table header. Got ".concat(got, ", wanted ").concat(args.exampleTableHeader), example.tableHeader.location);
                                 }
                             }
                             if (example.tableBody && args.exampleTableBody !== undefined) {
                                 example.tableBody.forEach(function (row) {
-                                    var rowCol = row.location.column;
-                                    if (rowCol !== args.exampleTableBody) {
-                                        document.addError(_this, "Invalid indentation for example table row. Got ".concat(rowCol, ", wanted ").concat(args.exampleTableBody), row.location);
+                                    var got = _this.col0(row.location.column);
+                                    if (got !== args.exampleTableBody) {
+                                        document.addError(_this, "Invalid indentation for example table row. Got ".concat(got, ", wanted ").concat(args.exampleTableBody), row.location);
                                     }
                                 });
                             }
@@ -162,9 +170,8 @@ var Indentation = /** @class */ (function () {
                         document.lines.forEach(function (line, index) {
                             var expected = numArg(line.safeKeyword);
                             if (typeof expected === 'number') {
-                                // lines store indentation as "count of spaces before keyword",
-                                // expected is a 1-based "column"; subtract 1 to get indentation.
-                                document.lines[index].indentation = expected - 1;
+                                // Config is 0-based (0 = no spaces); lines store indentation as space count.
+                                document.lines[index].indentation = expected;
                             }
                         });
                         return [4 /*yield*/, document.regenerate()];
