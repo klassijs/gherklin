@@ -27,7 +27,7 @@ export type ResolvedConfig<TConfig> = {
  * Main resolver:
  *   1) explicit path (--config / env)
  *   2) cosmiconfig search (from cwd)
- *   3) "any subfolder" nearest-first BFS for gherklin.config.{ts|yaml|yml}
+ *   3) "any subfolder" nearest-first BFS for gherklin.config.{ts|yaml|yml} (finds config in any subdirectory)
  *   4) XDG
  *   5) fallback: undefined
  */

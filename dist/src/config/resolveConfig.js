@@ -17,7 +17,7 @@ const BASE_PLACES = [
     '.config/gherklin.config.mjs', '.config/gherklin.config.cjs',
     '.config/gherklin.config.yaml', '.config/gherklin.config.yml',
 ];
-// filenames we consider a config in the “any subfolder” pass
+// filenames we consider a config in the "any subfolder" pass
 const LOOSE_FILENAMES = new Set([
     'gherklin.config.ts',
     'gherklin.config.yaml',
@@ -36,7 +36,7 @@ if (DEFAULT_SKIP_DIRS.length === 0) {
  * Main resolver:
  *   1) explicit path (--config / env)
  *   2) cosmiconfig search (from cwd)
- *   3) "any subfolder" nearest-first BFS for gherklin.config.{ts|yaml|yml}
+ *   3) "any subfolder" nearest-first BFS for gherklin.config.{ts|yaml|yml} (finds config in any subdirectory)
  *   4) XDG
  *   5) fallback: undefined
  */
@@ -57,7 +57,7 @@ export async function resolveConfig(opts = {}) {
     const fromCwd = await searchFromDir(cwd, BASE_PLACES);
     if (fromCwd)
         return fromCwd;
-    // 3) "any subfolder" nearest-first BFS at each level up to root
+    // 3) "any subfolder" nearest-first BFS at each level up to root (finds config in any subdirectory)
     const maxDepth = opts.maxScanDepth ?? DEFAULT_MAX_DEPTH;
     const skipDirs = opts.skipDirs ?? DEFAULT_SKIP_DIRS;
     const loose = await searchUpLoose(cwd, maxDepth, skipDirs);
