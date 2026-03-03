@@ -1,20 +1,7 @@
 # Custom rules
 
-This folder holds rules that are not built into Gherklin.
+This folder is for rules that are not part of the built-in set.
 
-## feature-name-length
+**Feature name length:** The rule that enforced a maximum length for the Feature name/title is now **built-in** as `feature-name-length`. Add it in your config under `rules` (no `customRulesDirectory` needed). See the [Rules README](../rules/README.md#feature-name-length).
 
-Enforces a maximum length for the **Feature name/title** (the text after `Feature: `).  
-Gherklin has no built-in rule for this (only `feature-description` for the description block and `scenario-name-length` for scenario titles).
-
-**Config:** Same as `scenario-name-length`: a number (max length) or `['error', 80]`. Default max is 100.
-
-**Enable:** Point `customRulesDirectory` at this folder and add the rule to your config, for example in `gherklin.config.yaml`:
-
-```yaml
-customRulesDirectory: './src/custom-rules'
-rules:
-  feature-name-length: 80
-  # or with severity:
-  # feature-name-length: ['warn', 80]
-```
+To add your own custom rule, implement a class that matches the [Rule](../rule.ts) interface and put it here, then set `customRulesDirectory: './src/custom-rules'` in your config.

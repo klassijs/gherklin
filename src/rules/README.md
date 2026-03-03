@@ -42,6 +42,7 @@ option.
 | [Filename Camel Case](#filename-camel-case)             | `filename-camel-case`       |    ❌    |
 | [Unique Examples](#unique-examples)                     | `unique-examples`           |    ❌    |
 | [Feature Description](#feature-description)             | `feature-description`       |    ❌    |
+| [Feature Name Length](#feature-name-length)             | `feature-name-length`       |    ❌    |
 | [Scenario Action](#scenario-action)                     | `scenario-action`           |    ❌    |
 | [Scenario Verification](#scenario-verification)         | `scenario-verification`     |    ❌    |
 | [Scenario Name Length](#scenario-name-length)           | `scenario-name-length`      |    ❌    |
@@ -849,6 +850,28 @@ Set severity and minimum length
 export default {
   rules: {
     'feature-description': ['error', 60],
+  }
+}
+```
+
+### Feature Name Length
+
+Enforces a maximum length for the Feature name/title (the text after `Feature: `). Same schema as scenario-name-length: number (max length, default 100) or `['warn'|'error', number]`.
+
+**Examples**
+
+```typescript
+export default {
+  rules: {
+    'feature-name-length': 80,
+  }
+}
+```
+
+```typescript
+export default {
+  rules: {
+    'feature-name-length': ['error', 60],
   }
 }
 ```
