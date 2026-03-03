@@ -37,10 +37,16 @@
 * [Contributors](#contributors)
 
 # Installation
-Gherklin can be installed either via NPM or Yarn
+Gherklin can be installed via pnpm, npm, or Yarn:
+
+```shell
+pnpm add gherklin
+```
+
 ```shell
 npm install gherklin
 ```
+
 ```shell
 yarn add gherklin
 ```
@@ -58,7 +64,8 @@ Other versions may work, but are not tested.
 Gherklin includes a bin file, which can be ran with the following
 
 ```shell
-npx tsx ./node_modules/.bin/gherklin
+pnpm exec gherklin
+# or: npx gherklin
 ```
 
 #### API
@@ -125,7 +132,7 @@ rules:
 | `rules`                       | `object` | Configuration per rule                            |
 | `maxErrors`                   | `number` | Maximum amount of errors before the process fails |
 
-In this repo, the default runner config is `gherklin.config.yaml` (stdout). For an HTML dashboard report, use `gherklin.config.report.yaml` and run `npm run lint:features:report` (or `npx gherklin --config gherklin.config.report.yaml`).
+In this repo, the default runner config is `gherklin.config.yaml` (stdout). For an HTML dashboard report, use `gherklin.config.report.yaml` and run `pnpm run lint:features:report` (or `pnpm exec gherklin --config gherklin.config.report.yaml`).
 
 `rules` contains the configuration for each rule, whether built in or custom.
 Check [rules](./src/rules/README.md) for a list of built in rules.
@@ -240,7 +247,7 @@ When the rule is loaded, this schema is used to verify the configuration value f
 ## Generating Custom Rules
 Gherklin comes with a generator script that you can use. Running the following will generate the skeleton for a new Rule class:
 ```shell
-npx tsx ./node_modules/.bin/gherklin-rule
+pnpm exec tsx ./node_modules/.bin/gherklin-rule
 ```
 
 # Reporting
@@ -269,9 +276,9 @@ the [Rules README](./src/rules/README.md).
 Tests use the [Mocha Test Framework](https://mochajs.org/) and live in the [tests](./tests)
 directory.
 
-Unit tests can be ran with `npm test`.
+Unit tests can be ran with `pnpm test` (or `pnpm run test:unit`).
 
-Acceptance tests can be ran with `npm run acceptance`. These include Gherkin feature files
+Acceptance tests can be ran with `pnpm run acceptance`. These include Gherkin feature files
 to test the various built in rules.
 
 # Contributors

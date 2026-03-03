@@ -1,5 +1,5 @@
 # Runner config for HTML dashboard report
-# Use: npx gherklin --config gherklin.config.report.yaml  (or npm run lint:features:report)
+# Use: pnpm exec gherklin --config gherklin.config.report.yaml  (or pnpm run lint:features:report)
 
 reporter:
   type: 'html'
