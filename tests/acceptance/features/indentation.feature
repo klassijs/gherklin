@@ -17,12 +17,12 @@ Feature: Indentation
     Then there is 1 file with errors
     And the errors are
       | location                  | severity | rule        | message                                           |
-      | {"line": 2, "column": 1}  | warn     | indentation | Invalid indentation for scenario. Got 1, wanted 3 |
-      | {"line": 3, "column": 6}  | warn     | indentation | Invalid indentation for given. Got 6, wanted 5  |
-      | {"line": 4, "column": 4}  | warn     | indentation | Invalid indentation for when. Got 4, wanted 5   |
-      | {"line": 5, "column": 11} | warn     | indentation | Invalid indentation for then. Got 11, wanted 5  |
-      | {"line": 6, "column": 8}  | warn     | indentation | Invalid indentation for and. Got 8, wanted 5    |
-      | {"line": 7, "column": 2}  | warn     | indentation | Invalid indentation for but. Got 2, wanted 5    |
+      | {"line": 1, "column": 1}  | warn     | indentation | Invalid indentation for feature. Got 0, wanted 1   |
+      | {"line": 2, "column": 1}  | warn     | indentation | Invalid indentation for scenario. Got 0, wanted 3 |
+      | {"line": 4, "column": 4}  | warn     | indentation | Invalid indentation for when. Got 3, wanted 5    |
+      | {"line": 5, "column": 11} | warn     | indentation | Invalid indentation for then. Got 10, wanted 5   |
+      | {"line": 6, "column": 8}  | warn     | indentation | Invalid indentation for and. Got 7, wanted 5     |
+      | {"line": 7, "column": 2}  | warn     | indentation | Invalid indentation for but. Got 1, wanted 5     |
 
   Scenario: Invalid Indentation with tables
     Given the following feature file
@@ -44,10 +44,11 @@ Feature: Indentation
     Then there is 1 file with errors
     And the errors are
       | location                  | severity | rule        | message                                                         |
-      | {"line": 4, "column": 4}  | warn     | indentation | Invalid indentation for when data table. Got 4, wanted 5      |
-      | {"line": 7, "column": 1}  | warn     | indentation | Invalid indentation for example table header. Got 1, wanted 3 |
-      | {"line": 8, "column": 4}  | warn     | indentation | Invalid indentation for example table row. Got 4, wanted 3    |
-      | {"line": 9, "column": 1}  | warn     | indentation | Invalid indentation for example table row. Got 1, wanted 3    |
+      | {"line": 1, "column": 1}  | warn     | indentation | Invalid indentation for feature. Got 0, wanted 1               |
+      | {"line": 4, "column": 4}  | warn     | indentation | Invalid indentation for when data table. Got 3, wanted 5      |
+      | {"line": 7, "column": 1}  | warn     | indentation | Invalid indentation for example table header. Got 0, wanted 3  |
+      | {"line": 9, "column": 1}  | warn     | indentation | Invalid indentation for example table row. Got 0, wanted 3     |
+      | {"line": 10, "column": 3}  | warn     | indentation | Invalid indentation for example table row. Got 2, wanted 3    |
 
   Scenario: Invalid Indentation with feature tags
     Given the following feature file
@@ -61,7 +62,7 @@ Feature: Indentation
     Then there is 1 file with errors
     And the errors are
       | location                  | severity | rule        | message                                               |
-      | {"line": 1, "column": 4}  | warn     | indentation | Invalid indentation for feature tags. Got 4, wanted 1 |
+      | {"line": 1, "column": 4}  | warn     | indentation | Invalid indentation for feature tags. Got 3, wanted 1 |
 
   Scenario: Invalid Indentation with scenario tags
     Given the following feature file
@@ -76,18 +77,18 @@ Feature: Indentation
     Then there is 1 file with errors
     And the errors are
       | location                  | severity | rule        | message                                               |
-      | {"line": 2, "column": 9}  | warn     | indentation | Invalid indentation for scenario tags. Got 9, wanted 3 |
+      | {"line": 2, "column": 9}  | warn     | indentation | Invalid indentation for scenario tags. Got 8, wanted 3 |
 
   Scenario: Valid Indentation
     Given the following feature file
       """
-      Feature: Invalid
-        Scenario: Doing something
-          Given I do something
-          When I do another thing
-          Then I should have done something
-          And another thing
-          But not done nothing
+       Feature: Invalid
+         Scenario: Doing something
+           Given I do something
+           When I do another thing
+           Then I should have done something
+           And another thing
+           But not done nothing
       """
     When Gherklin is ran with the following configuration
       | rules                                                                                                |

@@ -6,7 +6,6 @@ export default class FeatureDescription implements Rule {
     readonly name: string;
     readonly acceptedSchema: AcceptedSchema;
     readonly schema: Schema;
-    private defaultThreshold;
     constructor(rawSchema: RawSchema);
     run(document: Document): Promise<void>;
 }

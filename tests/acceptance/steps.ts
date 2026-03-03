@@ -90,6 +90,10 @@ Then('the error(s) are/is', function (table: DataTable): void {
     expectedErrors.push(error)
   })
 
+  const byLocation = (a: { location: { line: number; column: number } }, b: { location: { line: number; column: number } }) =>
+    a.location.line !== b.location.line ? a.location.line - b.location.line : a.location.column - b.location.column
+  errors.sort(byLocation)
+  expectedErrors.sort(byLocation)
   expect(errors).to.deep.equal(expectedErrors)
 })
 

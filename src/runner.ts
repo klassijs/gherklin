@@ -156,7 +156,7 @@ export default class Runner {
 
     public getReporter(): Reporter {
         const reporterConfig = Object.assign({}, this.config?.reporter, {
-            configDirectory: this.config.configDirectory,
+            configDirectory: this.config.configDirectory ?? process.cwd(),
         }) as ReporterConfig
 
         switch (reporterConfig.type) {

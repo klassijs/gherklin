@@ -33,7 +33,8 @@ export default class NoTrailingSpaces implements Rule {
 
   public async fix(document: Document): Promise<void> {
     document.lines.forEach((line: Line, index: number) => {
-      const joined = `${line.keyword}${line.text.trimEnd()}`
+      const prefix = line.indentation > 0 ? ' '.repeat(line.indentation) : ''
+      const joined = prefix + line.keyword + line.text.trimEnd()
       document.lines[index] = new Line(joined)
     })
 

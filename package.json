@@ -4,6 +4,7 @@
   "description": "A linter for Gherkin syntax",
   "author": "Carl Markham <admin@gherklin.com>",
   "license": "ISC",
+  "packageManager": "pnpm@9.15.0",
   "engines": {
     "node": ">=22"
   },
@@ -33,12 +34,13 @@
   },
   "scripts": {
     "test": "mocha",
+    "test:unit": "mocha",
     "acceptance": "node --import tsx ./node_modules/@cucumber/cucumber/bin/cucumber-js --config tests/acceptance/cucumber.mjs",
     "eslint": "node_modules/.bin/eslint",
     "eslint:fix": "node_modules/.bin/eslint --fix",
     "gherklin": "npx tsx ./bin/gherklin.ts",
     "build": "rimraf dist && tsc -p tsconfig.build.json",
-    "prepublishOnly": "npm run build",
+    "prepublishOnly": "pnpm run build",
     "dev:cli": "tsx ./bin/gherklin.ts",
     "lint:features": "tsx ./bin/gherklin.ts",
     "lint:features:report": "tsx ./bin/gherklin.ts --config gherklin.config.report.yaml"

@@ -23,7 +23,8 @@ export default class NoTrailingSpaces {
     }
     async fix(document) {
         document.lines.forEach((line, index) => {
-            const joined = `${line.keyword}${line.text.trimEnd()}`;
+            const prefix = line.indentation > 0 ? ' '.repeat(line.indentation) : '';
+            const joined = prefix + line.keyword + line.text.trimEnd();
             document.lines[index] = new Line(joined);
         });
         await document.regenerate();

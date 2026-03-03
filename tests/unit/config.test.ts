@@ -1,3 +1,4 @@
+import path from 'node:path'
 import { expect, use } from 'chai'
 import chaiAsPromised from 'chai-as-promised'
 
@@ -16,24 +17,32 @@ describe('Config', () => {
 
     it('can handle no file found', async () => {
       process.cwd = () => './invalid/path'
-      await expect(config.fromFile()).to.be.rejectedWith(Error, 'could not find any config file or GHERKLIN_CONFIG_FILE environment variable')
+      await expect(config.fromFile()).to.be.rejectedWith(
+        Error,
+        'Could not find a Gherklin config. Looked for gherklin.config.ts, gherklin.config.yaml, gherklin.config.yml or used GHERKLIN_CONFIG_FILE.',
+      )
     })
 
     it('can handle no default export in config file', async () => {
       process.cwd = () => import.meta.dirname
-      await expect(config.fromFile()).to.be.rejectedWith(Error, 'config file did not export a default function')
+      await expect(config.fromFile()).to.be.rejectedWith(Error, /does not export a default object/)
     })
 
     it('prefers GHERKLIN_CONFIG_FILE environment variable', async () => {
-      process.env.GHERKLIN_CONFIG_FILE = './gherklin.config.yaml'
-      const file = config.getConfigFile()
-      expect(file).to.eq('./gherklin.config.yaml')
+      const projectRoot = path.resolve(import.meta.dirname, '../..')
+      const configPath = path.join(projectRoot, 'gherklin.config.yaml')
+      process.env.GHERKLIN_CONFIG_FILE = configPath
+      const file = await config.getConfigFile()
+      expect(file).to.eq(configPath)
     })
 
     it('throws when GHERKLIN_CONFIG_FILE points to non-existent file', async () => {
       process.cwd = () => './invalid/path'
       process.env.GHERKLIN_CONFIG_FILE = '/non/existent/path/config.ts'
-      await expect(config.fromFile()).to.be.rejectedWith(Error, 'could not find any config file or GHERKLIN_CONFIG_FILE environment variable')
+      await expect(config.fromFile()).to.be.rejectedWith(
+        Error,
+        'GHERKLIN_CONFIG_FILE was set to "/non/existent/path/config.ts", but no file was found at "/non/existent/path/config.ts".',
+      )
     })
   })
 

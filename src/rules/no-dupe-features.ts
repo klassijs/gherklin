@@ -32,8 +32,8 @@ export default class NoDupeFeatures implements Rule {
         const next = [...prev, currentFile]
         this.features.set(featureName, next)
 
-        // Report duplicates with a clear, joined list
-        const listed = next.join(', ')
+        // Report duplicates with a clear, joined list (sorted for deterministic output)
+        const listed = [...next].sort().join(', ')
         document.addError(
             this,
             `Found duplicate feature "${featureName}" in "${listed}".`,

@@ -35,15 +35,30 @@ option.
 | [No Scenario Splat](#no-scenario-splat)                 | `no-scenario-splat`         |    ❌    |
 | [No Typographer Quotes](#no-typographer-quotes)         | `no-typographer-quotes`     |    ✅    |
 | [Background Setup Only](#background-setup-only)         | `background-setup-only`     |    ❌    |
-| [Given After Background](#given-after-background)       | `given-after-backgroundy`   |    ❌    |
+| [Given After Background](#given-after-background)       | `given-after-background`    |    ❌    |
 | [No Inconsistent Quotes](#no-inconsistent-quotes)       | `no-inconsistent-quotes`    |    ✅    |
 | [Filename Snake Case](#filename-snake-case)             | `filename-snake-case`       |    ❌    |
 | [Filename Kebab Case](#filename-kebab-case)             | `filename-kebab-case`       |    ❌    |
+| [Filename Camel Case](#filename-camel-case)             | `filename-camel-case`       |    ❌    |
 | [Unique Examples](#unique-examples)                     | `unique-examples`           |    ❌    |
 | [Feature Description](#feature-description)             | `feature-description`       |    ❌    |
 | [Scenario Action](#scenario-action)                     | `scenario-action`           |    ❌    |
 | [Scenario Verification](#scenario-verification)         | `scenario-verification`     |    ❌    |
 | [Scenario Name Length](#scenario-name-length)           | `scenario-name-length`      |    ❌    |
+| [Steps Length](#steps-length)                           | `steps-length`             |    ❌    |
+| [No Consecutive Empty Lines](#no-consecutive-empty-lines) | `no-consecutive-empty-lines` |    ✅    |
+| [Scenario Outline Has Examples](#scenario-outline-has-examples) | `scenario-outline-has-examples` |    ❌    |
+| [Required Tags](#required-tags)                         | `required-tags`            |    ❌    |
+| [No Duplicate Steps](#no-duplicate-steps)               | `no-duplicate-steps`        |    ❌    |
+| [Scenario Description](#scenario-description)           | `scenario-description`     |    ❌    |
+| [Outline Placeholder Consistency](#outline-placeholder-consistency) | `outline-placeholder-consistency` |    ❌    |
+| [Max Steps Per Scenario](#max-steps-per-scenario)       | `max-steps-per-scenario`   |    ❌    |
+| [No Empty Scenario](#no-empty-scenario)                 | `no-empty-scenario`        |    ❌    |
+| [No Punctuation in Titles](#no-punctuation-in-titles)   | `no-punctuation-in-titles`|    ❌    |
+| [Tag Format](#tag-format)                               | `tag-format`               |    ❌    |
+| [Max Background Steps](#max-background-steps)           | `max-background-steps`     |    ❌    |
+| [No And But First](#no-and-but-first)                   | `no-and-but-first`         |    ❌    |
+| [One Feature Per File](#one-feature-per-file)           | `one-feature-per-file`     |    ❌    |
 
 ### Aligned Datatables
 
@@ -740,6 +755,32 @@ export default {
 }
 ```
 
+### Filename Camel Case
+
+File names should be in camelCase (e.g. `myFeature.feature`, first letter lower, no separators).
+
+**Examples**
+
+Enable the rule
+
+```typescript
+export default {
+  rules: {
+    'filename-camel-case': 'on',
+  }
+}
+```
+
+Enable the rule and set severity
+
+```typescript
+export default {
+  rules: {
+    'filename-camel-case': 'error',
+  }
+}
+```
+
 ### Unique Examples
 
 Examples should have a unique name if there are more than 1 in a scenario outline.
@@ -768,11 +809,11 @@ export default {
 
 ### Feature Description
 
-Features should have descriptions to outline what behaviour they are testing.
+Features should have descriptions to outline what behaviour they are testing. The description must be at least a minimum length (default 40 characters). Minimum length is configurable via the schema.
 
 **Examples**
 
-Enable the rule
+Enable the rule (default min 40 characters)
 
 ```typescript
 export default {
@@ -788,6 +829,26 @@ Enable the rule and set severity
 export default {
   rules: {
     'feature-description': 'error',
+  }
+}
+```
+
+Set minimum description length (default severity)
+
+```typescript
+export default {
+  rules: {
+    'feature-description': 80,
+  }
+}
+```
+
+Set severity and minimum length
+
+```typescript
+export default {
+  rules: {
+    'feature-description': ['error', 60],
   }
 }
 ```
@@ -876,6 +937,290 @@ Enable the rule and set args
 export default {
   rules: {
     'scenario-name-length': ['error', 99],
+  }
+}
+```
+
+### Steps Length
+
+Step text (the part after Given/When/Then/And/But) should not exceed a maximum length. Applies to background steps and scenario steps. Default max is 80 characters.
+
+**Examples**
+
+Enable the rule (default max 80)
+
+```typescript
+export default {
+  rules: {
+    'steps-length': 'on',
+  }
+}
+```
+
+Enable the rule and set severity
+
+```typescript
+export default {
+  rules: {
+    'steps-length': 'error',
+  }
+}
+```
+
+Enable the rule with custom max length
+
+```typescript
+export default {
+  rules: {
+    'steps-length': 120,
+  }
+}
+```
+
+Enable the rule with severity and max length
+
+```typescript
+export default {
+  rules: {
+    'steps-length': ['error', 100],
+  }
+}
+```
+
+### No Consecutive Empty Lines
+
+At most one blank line in a row. Consecutive empty lines are reported and can be fixed automatically.
+
+**Examples**
+
+```typescript
+export default {
+  rules: {
+    'no-consecutive-empty-lines': 'on',
+  }
+}
+```
+
+```typescript
+export default {
+  rules: {
+    'no-consecutive-empty-lines': 'error',
+  }
+}
+```
+
+### Scenario Outline Has Examples
+
+Every Scenario Outline must have at least one Examples block.
+
+**Examples**
+
+```typescript
+export default {
+  rules: {
+    'scenario-outline-has-examples': 'on',
+  }
+}
+```
+
+```typescript
+export default {
+  rules: {
+    'scenario-outline-has-examples': 'error',
+  }
+}
+```
+
+### Required Tags
+
+Every scenario must have at least one of the specified tags (e.g. for filtering or layering).
+
+**Examples**
+
+```typescript
+export default {
+  rules: {
+    'required-tags': ['@layer:unit', '@layer:integration'],
+  }
+}
+```
+
+```typescript
+export default {
+  rules: {
+    'required-tags': ['error', ['@smoke', '@regression']],
+  }
+}
+```
+
+### No Duplicate Steps
+
+The same step (keyword + text) must not appear more than once in a single scenario (or background).
+
+**Examples**
+
+```typescript
+export default {
+  rules: {
+    'no-duplicate-steps': 'on',
+  }
+}
+```
+
+```typescript
+export default {
+  rules: {
+    'no-duplicate-steps': 'error',
+  }
+}
+```
+
+### Scenario Description
+
+Scenarios must have a description of at least a minimum length (default 40 characters). Schema: same as feature-description (`on`/`error`/number/`[severity, number]`).
+
+**Examples**
+
+```typescript
+export default {
+  rules: {
+    'scenario-description': 'on',
+  }
+}
+```
+
+```typescript
+export default {
+  rules: {
+    'scenario-description': ['error', 60],
+  }
+}
+```
+
+<hr>
+
+### Outline Placeholder Consistency
+
+For Scenario Outlines, every `<placeholder>` in step text must appear in an Examples header, and every Examples header column must be used in at least one step.
+
+**Examples**
+
+```typescript
+export default {
+  rules: {
+    'outline-placeholder-consistency': 'on',
+  }
+}
+```
+
+<hr>
+
+### Max Steps Per Scenario
+
+Limit the number of steps allowed per scenario. Config: number (e.g. `10` or `['error', 10]`).
+
+**Examples**
+
+```typescript
+export default {
+  rules: {
+    'max-steps-per-scenario': 10,
+  }
+}
+```
+
+<hr>
+
+### No Empty Scenario
+
+Scenarios must have at least one step.
+
+**Examples**
+
+```typescript
+export default {
+  rules: {
+    'no-empty-scenario': 'on',
+  }
+}
+```
+
+<hr>
+
+### No Punctuation in Titles
+
+Feature and scenario titles must not end with `.`, `!`, or `?`.
+
+**Examples**
+
+```typescript
+export default {
+  rules: {
+    'no-punctuation-in-titles': 'on',
+  }
+}
+```
+
+<hr>
+
+### Tag Format
+
+Tags (feature and scenario) must match a regex pattern. Config: `'on'`/`'error'` or `['error', '^@[a-z-]+$']`.
+
+**Examples**
+
+```typescript
+export default {
+  rules: {
+    'tag-format': ['error', '^@[a-z][a-z0-9-]*$'],
+  }
+}
+```
+
+<hr>
+
+### Max Background Steps
+
+Limit the number of steps allowed in a Background. Config: number (e.g. `3` or `['warn', 5]`).
+
+**Examples**
+
+```typescript
+export default {
+  rules: {
+    'max-background-steps': 5,
+  }
+}
+```
+
+<hr>
+
+### No And But First
+
+The first step in a Background or Scenario must be Given, When, or Then—not And or But.
+
+**Examples**
+
+```typescript
+export default {
+  rules: {
+    'no-and-but-first': 'on',
+  }
+}
+```
+
+<hr>
+
+### One Feature Per File
+
+A file must contain at most one `Feature:` declaration. (Note: Gherkin syntax allows only one Feature per file, so the parser will fail on a second `Feature:` before rules run. This rule still runs on valid files and would flag multiple Feature lines if the document were built from raw lines.)
+
+**Examples**
+
+```typescript
+export default {
+  rules: {
+    'one-feature-per-file': 'on',
   }
 }
 ```
