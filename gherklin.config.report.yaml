@@ -1,0 +1,32 @@
+# Runner config for HTML dashboard report
+# Use: npx gherklin --config gherklin.config.report.yaml  (or npm run lint:features:report)
+
+reporter:
+  type: 'html'
+  outFile: 'gherklin-report.html'
+featureDirectory: './tests/acceptance/features'
+rules:
+  indentation:
+    - 'warn'
+    - feature: 1
+      background: 3
+      scenario: 3
+      step: 5
+      examples: 5
+      given: 5
+      when: 5
+      then: 5
+      and: 5
+      but: 5
+      exampleTableHeader: 7
+      exampleTableBody: 7
+      scenarioOutline: 3
+      dataTable: 7
+      featureTag: 1
+      scenarioTag: 3
+  new-line-at-eof: 'error'
+  no-background-only: 'error'
+  no-empty-file: 'error'
+  no-trailing-spaces: 'error'
+  no-unnamed-scenarios: 'error'
+  aligned-datatables: 'error'
