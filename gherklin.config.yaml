@@ -1,3 +1,6 @@
+# Gherklin runner config (project root = default lookup location)
+# Use: npx gherklin  (or npm run lint:features)
+
 reporter:
   type: 'stdout'
 featureDirectory: './tests/acceptance/features'

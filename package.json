@@ -40,7 +40,8 @@
     "build": "rimraf dist && tsc -p tsconfig.build.json",
     "prepublishOnly": "npm run build",
     "dev:cli": "tsx ./bin/gherklin.ts",
-    "lint:features": "tsx ./bin/gherklin.ts"
+    "lint:features": "tsx ./bin/gherklin.ts",
+    "lint:features:report": "tsx ./bin/gherklin.ts --config gherklin.config.report.yaml"
   },
   "dependencies": {
     "@cucumber/gherkin": "^32.1.0",

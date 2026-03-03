@@ -13,7 +13,8 @@ export default class JSONReporter extends Reporter {
       return
     }
 
-    writeFileSync(path.join(this.config.configDirectory, this.config.outFile || 'gherklin-report.json'), json, {
+    const outDir = this.config.configDirectory ?? process.cwd()
+    writeFileSync(path.join(outDir, this.config.outFile || 'gherklin-report.json'), json, {
       flag: 'w',
     })
   }

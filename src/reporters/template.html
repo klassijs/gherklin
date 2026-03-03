@@ -1,366 +1,362 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
-  <title>Gherklin Report</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{title}}</title>
   <style>
-      :root {
-          --color-bg: white;
-          --color-grey: #ddd;
-          --color-bg-muted: rgb(246, 248, 250);
-          --color-file-info-bg: #f1f8ff;
-          --color-font-muted: #888;
-          --color-error: indianred;
-          --color-warn: #ccb021;
-          --width-container: 1200px;
-          --width-gutter: 20px;
-      }
+    :root {
+      --bg-dark: #1a1a1a;
+      --bg-card: #2d2d2d;
+      --bg-card-hover: #363636;
+      --text: #e0e0e0;
+      --text-muted: #9ca3af;
+      --title-green: #4ade80;
+      --error: #ef4444;
+      --warn: #f59e0b;
+      --accent: #a78bfa;
+      --border: #404040;
+    }
 
-      body > header {
-          background: cornflowerblue;
-          color: white;
-          padding: 1rem;
-          margin-bottom: 1rem;
-          display: flex;
-          justify-content: space-between;
-      }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--bg-dark);
+      color: var(--text);
+      line-height: 1.5;
+      min-height: 100vh;
+    }
 
-      body {
-          font-family: Verdana, Arial, sans-serif;
-          line-height: 1.6;
-          margin: 0;
-          padding: 0;
-          background-color: var(--color-bg);
-      }
+    .header {
+      background: var(--bg-card);
+      border-bottom: 1px solid var(--border);
+      padding: 1rem 1.5rem;
+    }
+    .header-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .header h1 {
+      margin: 0;
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--title-green);
+    }
+    .header-meta {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+    }
+    .header-meta span { margin-left: 1rem; }
+    .header p {
+      margin: 0.5rem 0 0;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+    }
 
-      .sidebar {
-          margin-right: 1rem;
-          max-width: 18rem;
-      }
+    .container { max-width: 1200px; margin: 0 auto; padding: 1.5rem; }
 
-      .sidebar header {
-          background: var(--color-file-info-bg);
-          padding: 0.5rem;
-          border-bottom: 1px solid var(--color-grey);
-      }
+    .cards-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    @media (max-width: 900px) {
+      .cards-row { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 500px) {
+      .cards-row { grid-template-columns: 1fr; }
+    }
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1rem 1.25rem;
+    }
+    .card-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      margin-bottom: 0.25rem;
+    }
+    .card-value {
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+    .card-value.error { color: var(--error); }
+    .card-value.warn { color: var(--warn); }
 
-      .sidebar header > p {
-          margin: 0;
-      }
+    .overview-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    @media (max-width: 700px) {
+      .overview-row { grid-template-columns: 1fr; }
+    }
+    .card-title {
+      font-size: 0.875rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+    }
+    .donut-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    .donut {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      background: conic-gradient(
+        var(--error) 0deg {{errorPercent}}%,
+        var(--warn) {{errorPercent}}% 100%
+      );
+      position: relative;
+    }
+    .donut.zero { background: var(--border); }
+    .donut::after {
+      content: '';
+      position: absolute;
+      inset: 20%;
+      background: var(--bg-card);
+      border-radius: 50%;
+    }
+    .donut-center {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 0.875rem;
+      font-weight: 600;
+      z-index: 1;
+    }
+    .donut-legend {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+    }
+    .donut-legend span { display: block; margin-bottom: 0.25rem; }
+    .donut-legend .dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 0.5rem; vertical-align: middle; }
+    .dot-error { background: var(--error); }
+    .dot-warn { background: var(--warn); }
 
-      .sidebar-content {
-          padding: 0.5rem;
-      }
+    .top-rules { list-style: none; padding: 0; margin: 0; }
+    .top-rules li {
+      margin-bottom: 0.75rem;
+      font-size: 0.875rem;
+    }
+    .top-rules .rule-name { margin-right: 0.5rem; }
+    .top-rules .rule-bar-wrap {
+      height: 8px;
+      background: var(--border);
+      border-radius: 4px;
+      margin-top: 0.25rem;
+      overflow: hidden;
+    }
+    .top-rules .rule-bar {
+      height: 100%;
+      background: #3b82f6;
+      border-radius: 4px;
+      min-width: 4px;
+    }
+    .top-rules .rule-count { color: var(--text-muted); font-size: 0.8rem; margin-left: 0.5rem; }
 
-      .stat {
-          display: flex;
-          justify-content: space-between;
-          font-size: 14px;
-      }
+    .section-title {
+      font-size: 0.875rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      margin-bottom: 0.75rem;
+    }
+    .file-list {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: 1rem;
+      max-height: 280px;
+      overflow-y: auto;
+    }
+    .file-item {
+      padding: 0.75rem 1rem;
+      background: var(--bg-card);
+      border-bottom: 1px solid var(--border);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .file-item:last-child { border-bottom: none; }
+    .file-item:hover { background: var(--bg-card-hover); }
+    .file-item.selected { border-left: 4px solid var(--accent); background: var(--bg-card-hover); }
+    .file-item .path { font-size: 0.875rem; word-break: break-all; }
+    .file-item .counts { font-size: 0.8rem; color: var(--text-muted); white-space: nowrap; }
+    .file-item .counts .err { color: var(--error); }
+    .file-item .counts .wrn { color: var(--warn); }
 
-      .stat p {
-          margin: 0;
-      }
-
-      .sidebar > div {
-          margin-bottom: 1rem;
-      }
-
-      .sidebar input#search {
-          border: 1px solid var(--color-grey);
-          padding: 0.5rem;
-          width: 12rem;
-      }
-
-      .sidebar-content > div {
-          margin-bottom: 1rem;
-      }
-
-      .container {
-          margin: 0 auto;
-          width: var(--width-container);
-          display: flex;
-      }
-
-      .file-info {
-          padding: 0.5rem;
-          background: var(--color-file-info-bg);
-          display: flex;
-          justify-content: space-between;
-          cursor: pointer;
-          user-select: none;
-      }
-
-      .file-info svg {
-          color: var(--color-font-muted);
-      }
-
-      .file-info p {
-          margin: 0;
-      }
-
-      .file-info, .error, table, .warn, .sidebar > div {
-          border: 1px solid var(--color-grey);
-      }
-
-      .file-info.error, .error {
-          border-left: 5px solid var(--color-error);
-      }
-      .file-info.warn, .warn {
-          border-left: 5px solid var(--color-warn);
-      }
-
-      .file {
-          margin-bottom: 1rem;
-      }
-
-      table {
-          border-collapse: collapse;
-          border-top: 0;
-      }
-
-      .gutter {
-          width: var(--width-gutter);
-          line-height: 1.4;
-          font-family: monospace;
-          border-right: 1px solid var(--color-grey);
-          text-align: right;
-          padding: 0 0.5rem;
-          background: var(--color-bg-muted);
-          vertical-align: top;
-      }
-
-      .line {
-          font-family: monospace;
-          padding: 0 0.5rem;
-          width: calc(var(--width-container) - var(--width-gutter));
-      }
-
-      .line pre {
-          margin: 0;
-      }
-
-      td.has-error > p {
-          text-decoration: var(--color-error) wavy underline;
-      }
-
-      .keyword {
-          color: cornflowerblue;
-      }
-
-      td .error, td .warn {
-          vertical-align: middle;
-          padding: 0.5rem;
-          margin: 0.5rem 0;
-      }
-
-      td .error svg {
-          color: var(--color-error);
-          width: 2rem;
-      }
-      td .warn svg {
-          color: var(--color-warn);
-          width: 2rem;
-      }
-
-      td .error > header p, td .warn > header p {
-          display: inline-block;
-          vertical-align: top;
-          margin: 0.1rem 0 0;
-      }
-
-      .rule-name, .text-muted {
-          color: var(--color-font-muted);
-      }
-
-      td .error .line-info {
-          color: var(--color-error);
-          font-weight: 600;
-      }
-      td .warn .line-info {
-          color: var(--color-warn);
-          font-weight: 600;
-      }
-
-      .error-count, .warn-count {
-          border-radius: 100%;
-          color: white;
-          padding: 0 0.5rem;
-      }
-      .error-count {
-          background: var(--color-error);
-      }
-      .warn-count {
-          background: var(--color-warn);
-      }
-
-      .file .file-content {
-          display: none;
-      }
-
-      .file.active .file-content {
-          display: block;
-      }
-
-      .up-arrow {
-          display: none;
-      }
-      .file.active .up-arrow {
-          display: block;
-      }
-      .file.active .down-arrow {
-          display: none;
-      }
-      .highlight {
-          background: yellow;
-      }
+    .details-table-wrap {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      background: var(--bg-card);
+    }
+    .details-table-wrap.empty { display: none; }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { padding: 0.6rem 1rem; text-align: left; font-size: 0.875rem; border-bottom: 1px solid var(--border); }
+    th { background: var(--bg-dark); color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.75rem; }
+    tr:last-child td { border-bottom: none; }
+    .pill { display: inline-block; padding: 0.2rem 0.5rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 500; }
+    .pill.error { background: rgba(239, 68, 68, 0.2); color: var(--error); }
+    .pill.warn { background: rgba(245, 158, 11, 0.2); color: var(--warn); }
+    #issue-details tr:hover { background: var(--bg-card-hover); }
   </style>
 </head>
 <body>
-<header>
-  <div class="container">
-    <h1>Gherklin Report</h1>
-  </div>
-</header>
-<div class="container">
-  <div class="sidebar">
-    <div>
-      <header>
-        Statistics
-      </header>
-      <div class="sidebar-content">
-        <div class="stat">
-          <p>Lines checked</p>
-          <p><strong>{{totalLines}}</strong></p>
+  <header class="header">
+    <div class="container">
+      <div class="header-top">
+        <div>
+          <h1>{{title}}</h1>
+          <p>Feature quality report — Generated by Gherklin</p>
         </div>
-        <div class="stat">
-          <p>Errors</p>
-          <p><strong>{{totalErrors}}</strong></p>
+        <div class="header-meta">
+          <span>Generated: {{generatedAt}}</span>
+          <span>Version: {{version}}</span>
         </div>
-        <div class="stat">
-          <p>Warns</p>
-          <p><strong>{{totalWarns}}</strong></p>
-        </div>
-        {{#each this.rules}}
-          <div class="stat">
-            <p>{{@key}}</p>
-            <p><strong>{{this}}</strong></p>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="cards-row">
+      <div class="card">
+        <div class="card-label">Files scanned</div>
+        <div class="card-value">{{filesScanned}}</div>
+      </div>
+      <div class="card">
+        <div class="card-label">Errors found</div>
+        <div class="card-value error">{{totalErrors}}</div>
+      </div>
+      <div class="card">
+        <div class="card-label">Warnings found</div>
+        <div class="card-value warn">{{totalWarnings}}</div>
+      </div>
+      <div class="card">
+        <div class="card-label">Took (seconds)</div>
+        <div class="card-value">{{durationSeconds}}s</div>
+      </div>
+    </div>
+
+    <div class="overview-row">
+      <div class="card">
+        <div class="card-title">Severity overview</div>
+        <div class="donut-wrap">
+          <div style="position: relative;">
+            <div class="donut {{#unless totalIssues}}zero{{/unless}}"></div>
+            <span class="donut-center">{{totalIssues}} Issues</span>
           </div>
-        {{/each}}
+          <div class="donut-legend">
+            <span><span class="dot dot-error"></span>Errors: {{totalErrors}}</span>
+            <span><span class="dot dot-warn"></span>Warnings: {{totalWarnings}}</span>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-title">Top rules (by occurrences)</div>
+        <p style="font-size: 0.8rem; color: var(--text-muted); margin: 0 0 0.75rem;">Showing top {{topRules.length}} rules.</p>
+        <ul class="top-rules">
+          {{#each topRules}}
+          <li>
+            <span class="rule-name">{{this.name}}</span><span class="rule-count">{{this.count}}</span>
+            <div class="rule-bar-wrap">
+              <div class="rule-bar" style="width: {{this.widthPercent}}%;"></div>
+            </div>
+          </li>
+          {{/each}}
+        </ul>
       </div>
     </div>
-    <div>
-      <header>
-        <p>Options</p>
-      </header>
-      <div class="sidebar-content">
-        <div>
-          <input type="text" id="search" placeholder="Search files...">
-        </div>
-        <div>
-          <input id="show-errors" type="checkbox" checked>
-          <label for="show-errors">Show errors</label>
-        </div>
-        <div>
-          <input id="show-warns" type="checkbox" checked>
-          <label for="show-warns">Show warnings</label>
-        </div>
+
+    <div class="section-title">Feature files</div>
+    <div class="file-list">
+      {{#each fileList}}
+      <div class="file-item" data-index="{{@index}}">
+        <span class="path">{{this.path}}</span>
+        <span class="counts">
+          <span class="err">{{this.errorCount}} errors</span>, <span class="wrn">{{this.warnCount}} warnings</span>
+        </span>
       </div>
+      {{/each}}
     </div>
-  </div>
-  <div class="files">
-    {{#each files}}
-      <div class="file active">
-      <div class="file-info {{#if this.hasErrors}}error{{else}}warn{{/if}}">
-        <span class="{{#if this.hasErrors}}error{{else}}warn{{/if}}-count">{{this.issueCount}}</span>
-        <p>
-          {{this.path}}
-        </p>
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="down-arrow"><path d="m6 9 6 6 6-6"/></svg>
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="up-arrow"><path d="m18 15-6-6-6 6"/></svg>
-      </div>
-      <table class="file-content">
-        <tbody>
-        {{#each this.lines}}
+
+    <div class="section-title">Line-level details</div>
+    <div class="details-table-wrap empty" id="details-wrap">
+      <table>
+        <thead>
           <tr>
-          <td class="gutter">
-            {{this.number}}
-          </td>
-          <td class="line {{#if this.hasError}}has-error{{/if}}">
-            <pre>{{{this.content}}}</pre>
-            {{#if this.hasError}}
-              <div class="{{this.errorSeverity}}">
-                <header>
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-x"><circle cx="12" cy="12" r="10"/><path d="m15 9-6 6"/><path d="m9 9 6 6"/></svg>
-                  <p class="text-muted">Failure on line {{this.number}}</p>
-                </header>
-                <p class="line-info">
-                  {{../this.path}}:{{this.number}}
-                </p>
-                <p>
-                  [{{this.ruleName}}]: {{this.ruleDescription}}
-                </p>
-              </div>
-            {{/if}}
-          </td>
-        </tr>
-        {{/each}}
-        </tbody>
+            <th>Line</th>
+            <th>Col</th>
+            <th>Severity</th>
+            <th>Rule</th>
+          </tr>
+        </thead>
+        <tbody id="issue-details"></tbody>
       </table>
     </div>
-    {{/each}}
-  </div>
-</div>
+  </main>
 
-<script>
-  const collapsibles = document.getElementsByClassName('file-info')
+  <script>
+    (function() {
+      const fileList = {{{fileListJson}}};
+      const wrap = document.getElementById('details-wrap');
+      const tbody = document.getElementById('issue-details');
+      const items = document.querySelectorAll('.file-item');
 
-  for (let col of collapsibles) {
-    const parent = col.parentElement
-    parent.addEventListener('click', () => {
-      parent.classList.toggle('active')
-    })
-  }
-
-  const showErrors = document.getElementById('show-errors')
-  showErrors.addEventListener('click', (e) => {
-    const checked = e.currentTarget.checked
-    const errorFiles = document.getElementsByClassName('file-info error')
-
-    if (!checked) {
-      [...errorFiles].forEach((ef) => ef.parentNode.style.display = 'none')
-    } else {
-      [...errorFiles].forEach((ef) => ef.parentNode.style.display = 'block')
-    }
-  })
-  const showWarns = document.getElementById('show-warns')
-  showWarns.addEventListener('click', (e) => {
-    const checked = e.currentTarget.checked
-    const warnFiles = document.getElementsByClassName('file-info warn')
-
-    if (!checked) {
-      [...warnFiles].forEach((ef) => ef.parentNode.style.display = 'none')
-    } else {
-      [...warnFiles].forEach((ef) => ef.parentNode.style.display = 'block')
-    }
-  })
-
-  const search = document.getElementById('search')
-  search.addEventListener('keyup', (e) => {
-    const term = encodeURI(e.currentTarget.value)
-
-    const fileNames = document.querySelectorAll('.file-info > p');
-    [...fileNames].forEach((fn) => {
-      const wrapper = fn.parentNode.parentNode
-      const index = fn.innerText.indexOf(term)
-      if (index > -1) {
-        wrapper.style.display = 'block'
-        const original = fn.innerText
-        const before = original.slice(0, index)
-        const after = original.slice(index + term.length, original.length)
-        fn.innerHTML = before + `<span class="highlight">${term}</span>` + after
-      } else {
-        wrapper.style.display = 'none'
+      function renderDetails(index) {
+        const file = fileList[index];
+        if (!file || !file.issues || file.issues.length === 0) {
+          wrap.classList.add('empty');
+          tbody.innerHTML = '';
+          return;
+        }
+        wrap.classList.remove('empty');
+        tbody.innerHTML = file.issues.map(function(issue) {
+          return '<tr><td>' + issue.line + '</td><td>' + issue.col + '</td><td><span class="pill ' + issue.severity + '">' + issue.severity + '</span></td><td>' + escapeHtml(issue.rule) + '</td></tr>';
+        }).join('');
       }
-    })
-  })
-</script>
+
+      function escapeHtml(s) {
+        const div = document.createElement('div');
+        div.textContent = s;
+        return div.innerHTML;
+      }
+
+      items.forEach(function(el) {
+        el.addEventListener('click', function() {
+          items.forEach(function(i) { i.classList.remove('selected'); });
+          el.classList.add('selected');
+          renderDetails(parseInt(el.getAttribute('data-index'), 10));
+        });
+      });
+
+      if (fileList.length > 0) {
+        items[0].classList.add('selected');
+        renderDetails(0);
+      }
+    })();
+  </script>
 </body>
+</html>
