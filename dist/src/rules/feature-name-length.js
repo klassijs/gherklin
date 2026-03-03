@@ -1,9 +1,5 @@
 import { offOrNumberOrSeverityAndNumber } from '../schemas.js';
 import Schema from '../schema.js';
-/**
- * Custom rule: enforce maximum length for the Feature name/title
- * (the text after "Feature: "). No built-in rule covers this.
- */
 export default class FeatureNameLength {
     name = 'feature-name-length';
     acceptedSchema = offOrNumberOrSeverityAndNumber;
