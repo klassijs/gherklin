@@ -121,6 +121,36 @@ export default class Indentation {
                 document.lines[index].indentation = expected;
             }
         });
+        // Feature tags (tag lines don't have a dialect keyword, so fix by AST line number)
+        const featureTagExpected = numArg('featureTag');
+        if (typeof featureTagExpected === 'number' && document.feature.tags?.length) {
+            for (const tag of document.feature.tags) {
+                const lineIndex = tag.location.line - 1;
+                if (lineIndex >= 0 && lineIndex < document.lines.length) {
+                    const line = document.lines[lineIndex];
+                    document.lines[lineIndex].indentation = featureTagExpected;
+                    document.lines[lineIndex].text = (line.keyword + line.text).trim();
+                    document.lines[lineIndex].keyword = '';
+                }
+            }
+        }
+        // Scenario / scenario outline tags
+        const scenarioTagExpected = numArg('scenarioTag');
+        if (typeof scenarioTagExpected === 'number') {
+            document.feature.children.forEach((child) => {
+                if (!child.scenario?.tags?.length)
+                    return;
+                for (const tag of child.scenario.tags) {
+                    const lineIndex = tag.location.line - 1;
+                    if (lineIndex >= 0 && lineIndex < document.lines.length) {
+                        const line = document.lines[lineIndex];
+                        document.lines[lineIndex].indentation = scenarioTagExpected;
+                        document.lines[lineIndex].text = (line.keyword + line.text).trim();
+                        document.lines[lineIndex].keyword = '';
+                    }
+                }
+            });
+        }
         await document.regenerate();
     }
 }

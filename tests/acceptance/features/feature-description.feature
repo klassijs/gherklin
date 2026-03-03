@@ -24,7 +24,7 @@ Feature: Feature Description
       """
       Feature: Valid
       
-      This feature has a description
+      This feature has a description that is long enough to pass the minimum length.
       
         Scenario: Doing something
           Given I do something

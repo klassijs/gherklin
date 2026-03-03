@@ -2,7 +2,7 @@ import Schema from '../schema.js';
 import Rule from '../rule.js';
 import { RawSchema, AcceptedSchema } from '../types.js';
 import Document from '../document.js';
-export default class FeatureDescription implements Rule {
+export default class ScenarioOutlineHasExamples implements Rule {
     readonly name: string;
     readonly acceptedSchema: AcceptedSchema;
     readonly schema: Schema;

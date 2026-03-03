@@ -15,4 +15,4 @@ Feature: No Dupe Features
     Then there is 1 file with errors
     And the errors are
       | location                 | severity | rule             | message                                                                      |
-      | {"line": 1, "column": 1} | warn     | no-dupe-features | Found duplicate feature "Invalid" in "invalid-2.feature, invalid-1.feature". |
+      | {"line": 1, "column": 1} | warn     | no-dupe-features | Found duplicate feature "Invalid" in "invalid-1.feature, invalid-2.feature". |
