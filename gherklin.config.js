@@ -33,5 +33,6 @@ exports.default = {
         'no-trailing-spaces': 'warn',
         'no-unnamed-scenarios': 'warn',
         'aligned-datatables': 'warn',
+        'feature-name-length': ['error', 5],
     },
 };

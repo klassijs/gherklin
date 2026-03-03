@@ -1,26 +1,31 @@
-Feature: Allowed Tags
+ Feature: Allowed Tags
 
-  Scenario: Invalid Tags
-    Given the following feature file
+   Scenario: Invalid Tags
+     Given the following feature file
       """
       @invalid-tag
-      Feature: Invalid Tag
+ Feature: Invalid Tag
       """
-    When Gherklin is ran with the following configuration
+     When Gherklin is ran with the following configuration
       | rules                              |
       | {"allowed-tags": ["@development"]} |
-    Then there is 1 file with errors
-    And the errors are
+     Then there is 1 file with errors
+     And the errors are
       | location                 | severity | rule         | message                                                                        |
       | {"line": 1, "column": 1} | warn     | allowed-tags | Found a feature tag that is not allowed. Got @invalid-tag, wanted @development |
 
-  Scenario: Valid Tags
-    Given the following feature file
+   Scenario: Valid Tags
+     Given the following feature file
       """
       @development
-      Feature: Valid Tag
+ Feature: Valid Tag
       """
-    When Gherklin is ran with the following configuration
+     When Gherklin is ran with the following configuration
       | rules                              |
       | {"allowed-tags": ["@development"]} |
-    Then there are 0 files with errors
+     Then there are 0 files with errors
+
+
+
+
+

@@ -1,199 +1,204 @@
-Feature: Disabling Comments
+ Feature: Disabling Comments
 
   The comment # gherklin-disable can be added to the top of any file.
   If this comment is present, the file will be skipped for rule validation.
 
-  Scenario: Disable whole file
-    Given the following feature file
+   Scenario: Disable whole file
+     Given the following feature file
         """
         # gherklin-disable
         @invalid-tag
-        Feature: Invalid Tag
+ Feature: Invalid Tag
         """
-    When Gherklin is ran with the following configuration
+     When Gherklin is ran with the following configuration
       | rules                              |
       | {"allowed-tags": ["@development"]} |
-    Then there are 0 files with errors
+     Then there are 0 files with errors
 
-  Scenario: Disable whole file regardless of indentation
-    Given the following feature file
+   Scenario: Disable whole file regardless of indentation
+     Given the following feature file
         """
                 # gherklin-disable
         @invalid-tag
-        Feature: Invalid Tag
+ Feature: Invalid Tag
         """
-    When Gherklin is ran with the following configuration
+     When Gherklin is ran with the following configuration
       | rules                              |
       | {"allowed-tags": ["@development"]} |
-    Then there are 0 files with errors
+     Then there are 0 files with errors
 
-  Scenario: Disable comment is not on the first line
+   Scenario: Disable comment is not on the first line
 
   Gherklin only checks the first line when disabling the whole file
 
-    Given the following feature file
+     Given the following feature file
         """
         @invalid-tag
         # gherklin-disable
-        Feature: Invalid Tag
+ Feature: Invalid Tag
         """
-    When Gherklin is ran with the following configuration
+     When Gherklin is ran with the following configuration
       | rules                              |
       | {"allowed-tags": ["@development"]} |
-    Then there are 1 files with errors
+     Then there are 1 files with errors
 
-  Scenario: Disable whole file but comment is not correctly formatted
-    Given the following feature file
+   Scenario: Disable whole file but comment is not correctly formatted
+     Given the following feature file
         """
         #gherklin-disable
         @invalid-tag
-        Feature: Invalid Tag
+ Feature: Invalid Tag
         """
-    When Gherklin is ran with the following configuration
+     When Gherklin is ran with the following configuration
       | rules                              |
       | {"allowed-tags": ["@development"]} |
-    Then there are 1 file with errors
+     Then there are 1 file with errors
 
-  Scenario: Disable next line
-    Given the following feature file
+   Scenario: Disable next line
+     Given the following feature file
         """
-        Feature: Empty Scenario
+ Feature: Empty Scenario
           # gherklin-disable-next-line
-          Scenario:
+   Scenario:
         """
-    When Gherklin is ran with the following configuration
+     When Gherklin is ran with the following configuration
       | rules                          |
       | {"no-unnamed-scenarios": "on"} |
-    Then there are 0 files with errors
+     Then there are 0 files with errors
 
-  Scenario: Disable next line regardless of indentation
-    Given the following feature file
+   Scenario: Disable next line regardless of indentation
+     Given the following feature file
         """
-        Feature: Empty Scenario
+ Feature: Empty Scenario
                   # gherklin-disable-next-line
-          Scenario:
+   Scenario:
         """
-    When Gherklin is ran with the following configuration
+     When Gherklin is ran with the following configuration
       | rules                          |
       | {"no-unnamed-scenarios": "on"} |
-    Then there are 0 files with errors
+     Then there are 0 files with errors
 
-  Scenario: Disable next line but comment is not correctly formatted
-    Given the following feature file
+   Scenario: Disable next line but comment is not correctly formatted
+     Given the following feature file
         """
-        Feature: Empty Scenario
+ Feature: Empty Scenario
           #gherklin-disable-next-line
-          Scenario:
+   Scenario:
         """
-    When Gherklin is ran with the following configuration
+     When Gherklin is ran with the following configuration
       | rules                          |
       | {"no-unnamed-scenarios": "on"} |
-    Then there are 1 file with errors
+     Then there are 1 file with errors
 
-  Scenario: Disable next line with specific rules
-    Given the following feature file
+   Scenario: Disable next line with specific rules
+     Given the following feature file
         """
-        Feature: Empty Scenario
+ Feature: Empty Scenario
           # gherklin-disable-next-line no-unnamed-scenarios
-          Scenario:
+   Scenario:
         """
-    When Gherklin is ran with the following configuration
+     When Gherklin is ran with the following configuration
       | rules                          |
       | {"no-unnamed-scenarios": "on"} |
-    Then there are 0 files with errors
+     Then there are 0 files with errors
 
-  Scenario: Disable next line with multiple specific rules
-    Given the following feature file
+   Scenario: Disable next line with multiple specific rules
+     Given the following feature file
         """
-        Feature: Empty Scenario
+ Feature: Empty Scenario
           # gherklin-disable-next-line no-unnamed-scenarios, indentation
-          Scenario:
+   Scenario:
         """
-    When Gherklin is ran with the following configuration
+     When Gherklin is ran with the following configuration
       | rules                          |
       | {"no-unnamed-scenarios": "on", "indentation": {"scenario": 0}} |
-    Then there is 0 files with errors
+     Then there is 0 files with errors
 
-  Scenario: Disable next line with specific rules regardless of indentation
-    Given the following feature file
+   Scenario: Disable next line with specific rules regardless of indentation
+     Given the following feature file
         """
-        Feature: Empty Scenario
+ Feature: Empty Scenario
               # gherklin-disable-next-line no-unnamed-scenarios
-          Scenario:
+   Scenario:
         """
-    When Gherklin is ran with the following configuration
+     When Gherklin is ran with the following configuration
       | rules                          |
       | {"no-unnamed-scenarios": "on"} |
-    Then there are 0 files with errors
+     Then there are 0 files with errors
 
-  Scenario: Disable next line with specific rules but comment is not correctly formatted
-    Given the following feature file
+   Scenario: Disable next line with specific rules but comment is not correctly formatted
+     Given the following feature file
         """
-        Feature: Empty Scenario
+ Feature: Empty Scenario
           #gherklin-disable-next-line no-unnamed-scenarios
-          Scenario:
+   Scenario:
         """
-    When Gherklin is ran with the following configuration
+     When Gherklin is ran with the following configuration
       | rules                          |
       | {"no-unnamed-scenarios": "on"} |
-    Then there are 1 files with errors
+     Then there are 1 files with errors
 
-  Scenario: Disable next line with specific rules with no space between rules
-    Given the following feature file
+   Scenario: Disable next line with specific rules with no space between rules
+     Given the following feature file
         """
-        Feature: Empty Scenario
+ Feature: Empty Scenario
           # gherklin-disable-next-line no-unnamed-scenarios,indentation
-          Scenario:
+   Scenario:
         """
-    When Gherklin is ran with the following configuration
+     When Gherklin is ran with the following configuration
       | rules                          |
       | {"no-unnamed-scenarios": "on", "indentation": {"scenario": 0}} |
-    Then there are 0 files with errors
+     Then there are 0 files with errors
 
-  Scenario: Disable specific rule
-    Given the following feature file
+   Scenario: Disable specific rule
+     Given the following feature file
         """
         # gherklin-disable no-unnamed-scenarios, something-else
-        Feature: Empty Scenario
-          Scenario:
+ Feature: Empty Scenario
+   Scenario:
         """
-    When Gherklin is ran with the following configuration
+     When Gherklin is ran with the following configuration
       | rules                          |
       | {"no-unnamed-scenarios": "on"} |
-    Then there are 0 files with errors
+     Then there are 0 files with errors
 
-  Scenario: Disable specific rule regradless of indentation
-    Given the following feature file
+   Scenario: Disable specific rule regradless of indentation
+     Given the following feature file
         """
               # gherklin-disable no-unnamed-scenarios
-        Feature: Empty Scenario
-          Scenario:
+ Feature: Empty Scenario
+   Scenario:
         """
-    When Gherklin is ran with the following configuration
+     When Gherklin is ran with the following configuration
       | rules                          |
       | {"no-unnamed-scenarios": "on"} |
-    Then there are 0 files with errors
+     Then there are 0 files with errors
 
-  Scenario: Disable specific rule but comment is not correctly formatted
-    Given the following feature file
+   Scenario: Disable specific rule but comment is not correctly formatted
+     Given the following feature file
         """
         #gherklin-disable no-unnamed-scenarios, something-else
-        Feature: Empty Scenario
-          Scenario:
+ Feature: Empty Scenario
+   Scenario:
         """
-    When Gherklin is ran with the following configuration
+     When Gherklin is ran with the following configuration
       | rules                          |
       | {"no-unnamed-scenarios": "on"} |
-    Then there are 1 file with errors
+     Then there are 1 file with errors
 
-  Scenario: Disable specific rule with no space between rules
-    Given the following feature file
+   Scenario: Disable specific rule with no space between rules
+     Given the following feature file
         """
         # gherklin-disable no-unnamed-scenarios,something-else
-        Feature: Empty Scenario
-          Scenario:
+ Feature: Empty Scenario
+   Scenario:
         """
-    When Gherklin is ran with the following configuration
+     When Gherklin is ran with the following configuration
       | rules                          |
       | {"no-unnamed-scenarios": "on"} |
-    Then there are 0 files with errors
+     Then there are 0 files with errors
+
+
+
+
+

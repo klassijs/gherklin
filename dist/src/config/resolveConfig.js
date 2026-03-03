@@ -8,14 +8,15 @@ const BASE_PLACES = [
     'package.json',
     '.gherklinrc', '.gherklinrc.json', '.gherklinrc.yaml', '.gherklinrc.yml',
     '.gherklinrc.js', '.gherklinrc.ts', '.gherklinrc.mjs', '.gherklinrc.cjs',
+    'gherklin.config.yaml', 'gherklin.config.yml',
     'gherklin.config.ts', 'gherklin.config.js', 'gherklin.config.mjs',
-    'gherklin.config.cjs', 'gherklin.config.yaml', 'gherklin.config.yml',
+    'gherklin.config.cjs',
     '.config/gherklinrc', '.config/gherklinrc.json', '.config/gherklinrc.yaml',
     '.config/gherklinrc.yml', '.config/gherklinrc.js', '.config/gherklinrc.ts',
     '.config/gherklinrc.mjs', '.config/gherklinrc.cjs',
+    '.config/gherklin.config.yaml', '.config/gherklin.config.yml',
     '.config/gherklin.config.ts', '.config/gherklin.config.js',
     '.config/gherklin.config.mjs', '.config/gherklin.config.cjs',
-    '.config/gherklin.config.yaml', '.config/gherklin.config.yml',
 ];
 // filenames we consider a config in the "any subfolder" pass
 const LOOSE_FILENAMES = new Set([

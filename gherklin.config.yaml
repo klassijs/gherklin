@@ -30,4 +30,5 @@ rules:
   no-unnamed-scenarios: 'warn'
   aligned-datatables: 'warn'
   scenario-description: ['error', 10]
-  fix: true
+  feature-name-length: ['error', 20]
+fix: true
