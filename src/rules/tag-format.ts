@@ -26,7 +26,7 @@ export default class TagFormat implements Rule {
       return
     }
 
-    const checkTags = (tags: Array<{ name: string; location: { line: number; column?: number } }>): void => {
+    const checkTags = (tags: ReadonlyArray<{ name: string; location: { line: number; column?: number } }>): void => {
       tags.forEach((tag) => {
         if (!re.test(tag.name)) {
           document.addError(
