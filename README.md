@@ -84,12 +84,20 @@ import { Runner } from 'gherklin'
 
 # Configuration
 
-Gherklin will look for the following files to resolve a valid config file in the same directory as your `package.json`
-file.
+## Where to put the config
 
-* gherklin.config.ts
-* gherklin.config.yaml
-* gherklin.config.yml
+**Best place:** the **project root** (the same directory as your `package.json`). The runner looks there first. Use a single file; the first one found wins.
+
+Supported filenames (in lookup order):
+
+* `gherklin.config.ts`
+* `gherklin.config.js`
+* `gherklin.config.yaml`
+* `gherklin.config.yml`
+* `.gherklinrc`, `.gherklinrc.json`, `.gherklinrc.yaml`, `.gherklinrc.yml`, etc.
+* `package.json` (under a `gherklin` key)
+
+To use a different config (e.g. for a second profile), pass `--config path/to/config.yaml` or set `GHERKLIN_CONFIG_FILE`.
 
 ### Example
 
@@ -116,6 +124,8 @@ rules:
 | `customRulesDirectory`        | `string` | The directory where your custom rules are         |
 | `rules`                       | `object` | Configuration per rule                            |
 | `maxErrors`                   | `number` | Maximum amount of errors before the process fails |
+
+In this repo, the default runner config is `gherklin.config.yaml` (stdout). For an HTML dashboard report, use `gherklin.config.report.yaml` and run `npm run lint:features:report` (or `npx gherklin --config gherklin.config.report.yaml`).
 
 `rules` contains the configuration for each rule, whether built in or custom.
 Check [rules](./src/rules/README.md) for a list of built in rules.

@@ -83,18 +83,18 @@ async function main() {
         console.log(pkg.version);
         process.exit(0);
     }
-    // ⬇️ Constrain the resolver with your config type
-    const { config } = await resolveConfig({
-        // no need to pass args.cwd any more; we already changed into it
+    const { config, filepath } = await resolveConfig({
         enableXdg: !args.noXdg,
         explicitPath: args.config
     });
-    // const { config } = await resolveConfig<GherklinConfiguration>({
-    //     explicitPath: args.config,
-    //     cwd: args.cwd,
-    //     enableXdg: !args.noXdg,
-    // });
-    const runner = new Runner(config);
+    if (!config) {
+        console.error('No Gherklin config found. Add a gherklin.config.yaml (or .ts/.yml) in the project root or pass --config <path>.');
+        process.exit(2);
+    }
+    const configWithDir = filepath
+        ? { ...config, configDirectory: path.dirname(filepath) }
+        : config;
+    const runner = new Runner(configWithDir);
     const init = await runner.init();
     if (!init.success) {
         console.error('Invalid Gherklin configuration:');

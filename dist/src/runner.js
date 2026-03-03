@@ -132,7 +132,7 @@ export default class Runner {
     };
     getReporter() {
         const reporterConfig = Object.assign({}, this.config?.reporter, {
-            configDirectory: this.config.configDirectory,
+            configDirectory: this.config.configDirectory ?? process.cwd(),
         });
         switch (reporterConfig.type) {
             case 'html':

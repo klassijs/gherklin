@@ -44,6 +44,7 @@ option.
 | [Scenario Action](#scenario-action)                     | `scenario-action`           |    ❌    |
 | [Scenario Verification](#scenario-verification)         | `scenario-verification`     |    ❌    |
 | [Scenario Name Length](#scenario-name-length)           | `scenario-name-length`      |    ❌    |
+| [Steps Length](#steps-length)                           | `steps-length`             |    ❌    |
 
 ### Aligned Datatables
 
@@ -876,6 +877,52 @@ Enable the rule and set args
 export default {
   rules: {
     'scenario-name-length': ['error', 99],
+  }
+}
+```
+
+### Steps Length
+
+Step text (the part after Given/When/Then/And/But) should not exceed a maximum length. Applies to background steps and scenario steps. Default max is 80 characters.
+
+**Examples**
+
+Enable the rule (default max 80)
+
+```typescript
+export default {
+  rules: {
+    'steps-length': 'on',
+  }
+}
+```
+
+Enable the rule and set severity
+
+```typescript
+export default {
+  rules: {
+    'steps-length': 'error',
+  }
+}
+```
+
+Enable the rule with custom max length
+
+```typescript
+export default {
+  rules: {
+    'steps-length': 120,
+  }
+}
+```
+
+Enable the rule with severity and max length
+
+```typescript
+export default {
+  rules: {
+    'steps-length': ['error', 100],
   }
 }
 ```
