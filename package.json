@@ -1,6 +1,6 @@
 {
   "name": "gherklin",
-  "version": "1.1.0",
+  "version": "1.0.14",
   "description": "A linter for Gherkin syntax",
   "author": "Carl Markham <admin@gherklin.com>",
   "license": "ISC",
