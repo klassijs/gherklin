@@ -111,7 +111,7 @@ To use a different config (e.g. for a second profile), pass `--config path/to/co
 ```typescript
 export default {
   featureDirectory: './features',
-  customRulesDirectory: './custom-rules',
+  customRulesDirectory: './src/custom-rules',
   rules: {
     'allowed-tags': 'off',
   },
@@ -120,7 +120,7 @@ export default {
 
 ```yaml
 featureDirectory: './features'
-customRulesDirectory: './custom-rules'
+customRulesDirectory: './src/custom-rules'
 rules:
   allowed-tags: 'off'
 ```

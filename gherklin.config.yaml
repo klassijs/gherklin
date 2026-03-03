@@ -29,3 +29,5 @@ rules:
   no-trailing-spaces: 'warn'
   no-unnamed-scenarios: 'warn'
   aligned-datatables: 'warn'
+  scenario-description: ['error', 10]
+  fix: true
