@@ -21,6 +21,8 @@ type CliArgs = {
     noXdg?: boolean;
     help?: boolean;
     version?: boolean;
+    reporter?: string;
+    outFile?: string;
 };
 
 function parseArgs(argv: string[]): CliArgs {
@@ -46,6 +48,12 @@ function parseArgs(argv: string[]): CliArgs {
             case '-v':
                 args.version = true;
                 break;
+            case '--reporter':
+                args.reporter = argv[++i];
+                break;
+            case '--outFile':
+                args.outFile = argv[++i];
+                break;
             default:
                 // ignore positional for now
                 break;
@@ -62,6 +70,8 @@ Options:
   -c, --config <path>   Load config file from explicit path
       --cwd <dir>       Start search from this directory (monorepos)
       --no-xdg          Disable XDG lookups
+      --reporter <type> Override reporter (html, json, stdout)
+      --outFile <path>  Output path for html/json report (e.g. reports/gherklin-report.html)
   -h, --help            Show this help
   -v, --version         Print version
 `);
@@ -120,7 +130,16 @@ async function main() {
 
     const configWithDir = filepath
         ? { ...config, configDirectory: path.dirname(filepath) }
-        : config;
+        : { ...config, configDirectory: process.cwd() };
+
+    // CLI overrides for reporter (so one command can add report without extra config file)
+    if (args.reporter || args.outFile) {
+        configWithDir.reporter = {
+            ...configWithDir.reporter,
+            ...(args.reporter && { type: args.reporter as 'html' | 'json' | 'stdout' }),
+            ...(args.outFile && { outFile: args.outFile })
+        };
+    }
 
     const runner = new Runner(configWithDir);
     const init = await runner.init();

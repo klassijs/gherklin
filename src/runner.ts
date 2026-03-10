@@ -159,6 +159,12 @@ export default class Runner {
             configDirectory: this.config.configDirectory ?? process.cwd(),
         }) as ReporterConfig
 
+        // Resolve relative outFile from process.cwd() so report is written in the invoking project
+        // (e.g. when config lives in node_modules/OAF/..., report goes to project/reports/)
+        if (reporterConfig.outFile && !path.isAbsolute(reporterConfig.outFile)) {
+            reporterConfig.outFile = path.resolve(process.cwd(), reporterConfig.outFile)
+        }
+
         switch (reporterConfig.type) {
             case 'html':
                 return new HTMLReporter(reporterConfig)
