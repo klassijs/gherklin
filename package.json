@@ -39,7 +39,7 @@
     "eslint": "node_modules/.bin/eslint",
     "eslint:fix": "node_modules/.bin/eslint --fix",
     "gherklin": "npx tsx ./bin/gherklin.ts",
-    "build": "rimraf dist && tsc -p tsconfig.build.json",
+    "build": "rimraf dist && tsc -p tsconfig.build.json && node -e \"require('fs').mkdirSync('dist/src/reporters', {recursive: true}); require('fs').copyFileSync('src/reporters/template.html', 'dist/src/reporters/template.html')\"",
     "prepublishOnly": "pnpm run build",
     "dev:cli": "tsx ./bin/gherklin.ts",
     "lint:features": "tsx ./bin/gherklin.ts",
