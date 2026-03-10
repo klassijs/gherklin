@@ -1,0 +1,3667 @@
+{
+  "/Users/larrygoddard/Projects/sideProjects/gherklin/tests/acceptance/features/aligned-datatables.feature": [
+    {
+      "message": "Invalid indentation for when data table. Got 6, wanted 7",
+      "location": {
+        "line": 14,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for and data table. Got 6, wanted 7",
+      "location": {
+        "line": 18,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for when data table. Got 6, wanted 7",
+      "location": {
+        "line": 35,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Data table is not formatted correctly",
+      "location": {
+        "line": 9,
+        "column": 24
+      },
+      "severity": "warn",
+      "rule": "aligned-datatables"
+    },
+    {
+      "message": "Data table is not formatted correctly",
+      "location": {
+        "line": 9,
+        "column": 37
+      },
+      "severity": "warn",
+      "rule": "aligned-datatables"
+    },
+    {
+      "message": "Data table is not formatted correctly",
+      "location": {
+        "line": 10,
+        "column": 20
+      },
+      "severity": "warn",
+      "rule": "aligned-datatables"
+    },
+    {
+      "message": "Data table is not formatted correctly",
+      "location": {
+        "line": 10,
+        "column": 25
+      },
+      "severity": "warn",
+      "rule": "aligned-datatables"
+    },
+    {
+      "message": "Scenario is missing a description.",
+      "location": {
+        "line": 3,
+        "column": 4
+      },
+      "severity": "error",
+      "rule": "scenario-description"
+    },
+    {
+      "message": "Scenario is missing a description.",
+      "location": {
+        "line": 24,
+        "column": 4
+      },
+      "severity": "error",
+      "rule": "scenario-description"
+    }
+  ],
+  "/Users/larrygoddard/Projects/sideProjects/gherklin/tests/acceptance/features/allowed-tags.feature": [
+    {
+      "message": "Invalid indentation for when data table. Got 6, wanted 7",
+      "location": {
+        "line": 10,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for and data table. Got 6, wanted 7",
+      "location": {
+        "line": 14,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for when data table. Got 6, wanted 7",
+      "location": {
+        "line": 24,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Scenario is missing a description.",
+      "location": {
+        "line": 3,
+        "column": 4
+      },
+      "severity": "error",
+      "rule": "scenario-description"
+    },
+    {
+      "message": "Scenario is missing a description.",
+      "location": {
+        "line": 17,
+        "column": 4
+      },
+      "severity": "error",
+      "rule": "scenario-description"
+    }
+  ],
+  "/Users/larrygoddard/Projects/sideProjects/gherklin/tests/acceptance/features/background-setup-only.feature": [
+    {
+      "message": "Invalid indentation for when data table. Got 6, wanted 7",
+      "location": {
+        "line": 13,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for and data table. Got 6, wanted 7",
+      "location": {
+        "line": 17,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for when data table. Got 6, wanted 7",
+      "location": {
+        "line": 32,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Scenario is missing a description.",
+      "location": {
+        "line": 3,
+        "column": 4
+      },
+      "severity": "error",
+      "rule": "scenario-description"
+    },
+    {
+      "message": "Scenario is missing a description.",
+      "location": {
+        "line": 21,
+        "column": 4
+      },
+      "severity": "error",
+      "rule": "scenario-description"
+    },
+    {
+      "message": "Feature name is too long. Expected max 20, got 21.",
+      "location": {
+        "line": 1,
+        "column": 2
+      },
+      "severity": "error",
+      "rule": "feature-name-length"
+    }
+  ],
+  "/Users/larrygoddard/Projects/sideProjects/gherklin/tests/acceptance/features/disable-comments.feature": [
+    {
+      "message": "Invalid indentation for when data table. Got 6, wanted 7",
+      "location": {
+        "line": 14,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for when data table. Got 6, wanted 7",
+      "location": {
+        "line": 26,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for when data table. Got 6, wanted 7",
+      "location": {
+        "line": 41,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for when data table. Got 6, wanted 7",
+      "location": {
+        "line": 53,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for when data table. Got 6, wanted 7",
+      "location": {
+        "line": 65,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for when data table. Got 6, wanted 7",
+      "location": {
+        "line": 77,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for when data table. Got 6, wanted 7",
+      "location": {
+        "line": 89,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for when data table. Got 6, wanted 7",
+      "location": {
+        "line": 101,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for when data table. Got 6, wanted 7",
+      "location": {
+        "line": 113,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for when data table. Got 6, wanted 7",
+      "location": {
+        "line": 125,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for when data table. Got 6, wanted 7",
+      "location": {
+        "line": 137,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for when data table. Got 6, wanted 7",
+      "location": {
+        "line": 149,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for when data table. Got 6, wanted 7",
+      "location": {
+        "line": 161,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for when data table. Got 6, wanted 7",
+      "location": {
+        "line": 173,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for when data table. Got 6, wanted 7",
+      "location": {
+        "line": 185,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for when data table. Got 6, wanted 7",
+      "location": {
+        "line": 197,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Data table is not formatted correctly",
+      "location": {
+        "line": 113,
+        "column": 71
+      },
+      "severity": "warn",
+      "rule": "aligned-datatables"
+    },
+    {
+      "message": "Data table is not formatted correctly",
+      "location": {
+        "line": 149,
+        "column": 71
+      },
+      "severity": "warn",
+      "rule": "aligned-datatables"
+    },
+    {
+      "message": "Scenario is missing a description.",
+      "location": {
+        "line": 6,
+        "column": 4
+      },
+      "severity": "error",
+      "rule": "scenario-description"
+    },
+    {
+      "message": "Scenario is missing a description.",
+      "location": {
+        "line": 18,
+        "column": 4
+      },
+      "severity": "error",
+      "rule": "scenario-description"
+    },
+    {
+      "message": "Scenario is missing a description.",
+      "location": {
+        "line": 45,
+        "column": 4
+      },
+      "severity": "error",
+      "rule": "scenario-description"
+    },
+    {
+      "message": "Scenario is missing a description.",
+      "location": {
+        "line": 57,
+        "column": 4
+      },
+      "severity": "error",
+      "rule": "scenario-description"
+    },
+    {
+      "message": "Scenario is missing a description.",
+      "location": {
+        "line": 69,
+        "column": 4
+      },
+      "severity": "error",
+      "rule": "scenario-description"
+    },
+    {
+      "message": "Scenario is missing a description.",
+      "location": {
+        "line": 81,
+        "column": 4
+      },
+      "severity": "error",
+      "rule": "scenario-description"
+    },
+    {
+      "message": "Scenario is missing a description.",
+      "location": {
+        "line": 93,
+        "column": 4
+      },
+      "severity": "error",
+      "rule": "scenario-description"
+    },
+    {
+      "message": "Scenario is missing a description.",
+      "location": {
+        "line": 105,
+        "column": 4
+      },
+      "severity": "error",
+      "rule": "scenario-description"
+    },
+    {
+      "message": "Scenario is missing a description.",
+      "location": {
+        "line": 117,
+        "column": 4
+      },
+      "severity": "error",
+      "rule": "scenario-description"
+    },
+    {
+      "message": "Scenario is missing a description.",
+      "location": {
+        "line": 129,
+        "column": 4
+      },
+      "severity": "error",
+      "rule": "scenario-description"
+    },
+    {
+      "message": "Scenario is missing a description.",
+      "location": {
+        "line": 141,
+        "column": 4
+      },
+      "severity": "error",
+      "rule": "scenario-description"
+    },
+    {
+      "message": "Scenario is missing a description.",
+      "location": {
+        "line": 153,
+        "column": 4
+      },
+      "severity": "error",
+      "rule": "scenario-description"
+    },
+    {
+      "message": "Scenario is missing a description.",
+      "location": {
+        "line": 165,
+        "column": 4
+      },
+      "severity": "error",
+      "rule": "scenario-description"
+    },
+    {
+      "message": "Scenario is missing a description.",
+      "location": {
+        "line": 177,
+        "column": 4
+      },
+      "severity": "error",
+      "rule": "scenario-description"
+    },
+    {
+      "message": "Scenario is missing a description.",
+      "location": {
+        "line": 189,
+        "column": 4
+      },
+      "severity": "error",
+      "rule": "scenario-description"
+    }
+  ],
+  "/Users/larrygoddard/Projects/sideProjects/gherklin/tests/acceptance/features/disallowed-tags.feature": [
+    {
+      "message": "Invalid indentation for when data table. Got 6, wanted 7",
+      "location": {
+        "line": 10,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for and data table. Got 6, wanted 7",
+      "location": {
+        "line": 14,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for when data table. Got 6, wanted 7",
+      "location": {
+        "line": 24,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Scenario is missing a description.",
+      "location": {
+        "line": 3,
+        "column": 4
+      },
+      "severity": "error",
+      "rule": "scenario-description"
+    },
+    {
+      "message": "Scenario is missing a description.",
+      "location": {
+        "line": 17,
+        "column": 4
+      },
+      "severity": "error",
+      "rule": "scenario-description"
+    }
+  ],
+  "/Users/larrygoddard/Projects/sideProjects/gherklin/tests/acceptance/features/feature-description.feature": [
+    {
+      "message": "Invalid indentation for when data table. Got 6, wanted 7",
+      "location": {
+        "line": 15,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for and data table. Got 6, wanted 7",
+      "location": {
+        "line": 19,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for when data table. Got 6, wanted 7",
+      "location": {
+        "line": 37,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Scenario is missing a description.",
+      "location": {
+        "line": 3,
+        "column": 4
+      },
+      "severity": "error",
+      "rule": "scenario-description"
+    },
+    {
+      "message": "Scenario is missing a description.",
+      "location": {
+        "line": 22,
+        "column": 4
+      },
+      "severity": "error",
+      "rule": "scenario-description"
+    }
+  ],
+  "/Users/larrygoddard/Projects/sideProjects/gherklin/tests/acceptance/features/feature-name-length.feature": [
+    {
+      "message": "Invalid indentation for when data table. Got 6, wanted 7",
+      "location": {
+        "line": 11,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for and data table. Got 6, wanted 7",
+      "location": {
+        "line": 15,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for when data table. Got 6, wanted 7",
+      "location": {
+        "line": 26,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Data table is not formatted correctly",
+      "location": {
+        "line": 15,
+        "column": 130
+      },
+      "severity": "warn",
+      "rule": "aligned-datatables"
+    },
+    {
+      "message": "Data table is not formatted correctly",
+      "location": {
+        "line": 26,
+        "column": 48
+      },
+      "severity": "warn",
+      "rule": "aligned-datatables"
+    },
+    {
+      "message": "Scenario is missing a description.",
+      "location": {
+        "line": 3,
+        "column": 4
+      },
+      "severity": "error",
+      "rule": "scenario-description"
+    },
+    {
+      "message": "Scenario is missing a description.",
+      "location": {
+        "line": 18,
+        "column": 4
+      },
+      "severity": "error",
+      "rule": "scenario-description"
+    }
+  ],
+  "/Users/larrygoddard/Projects/sideProjects/gherklin/tests/acceptance/features/filename-camel-case.feature": [
+    {
+      "message": "Invalid indentation for given data table. Got 6, wanted 7",
+      "location": {
+        "line": 5,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for when data table. Got 6, wanted 7",
+      "location": {
+        "line": 8,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for and data table. Got 6, wanted 7",
+      "location": {
+        "line": 12,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for example table header. Got 6, wanted 7",
+      "location": {
+        "line": 16,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for example table row. Got 6, wanted 7",
+      "location": {
+        "line": 17,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for example table row. Got 6, wanted 7",
+      "location": {
+        "line": 18,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for example table row. Got 6, wanted 7",
+      "location": {
+        "line": 19,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for example table row. Got 6, wanted 7",
+      "location": {
+        "line": 20,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for example table row. Got 6, wanted 7",
+      "location": {
+        "line": 21,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for given data table. Got 6, wanted 7",
+      "location": {
+        "line": 25,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for when data table. Got 6, wanted 7",
+      "location": {
+        "line": 28,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for example table header. Got 6, wanted 7",
+      "location": {
+        "line": 33,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for example table row. Got 6, wanted 7",
+      "location": {
+        "line": 34,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for example table row. Got 6, wanted 7",
+      "location": {
+        "line": 35,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for example table row. Got 6, wanted 7",
+      "location": {
+        "line": 36,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for example table row. Got 6, wanted 7",
+      "location": {
+        "line": 37,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Data table is not formatted correctly",
+      "location": {
+        "line": 20,
+        "column": 29
+      },
+      "severity": "warn",
+      "rule": "aligned-datatables"
+    },
+    {
+      "message": "Scenario is missing a description.",
+      "location": {
+        "line": 3,
+        "column": 4
+      },
+      "severity": "error",
+      "rule": "scenario-description"
+    },
+    {
+      "message": "Scenario is missing a description.",
+      "location": {
+        "line": 23,
+        "column": 4
+      },
+      "severity": "error",
+      "rule": "scenario-description"
+    }
+  ],
+  "/Users/larrygoddard/Projects/sideProjects/gherklin/tests/acceptance/features/filename-kebab-case.feature": [
+    {
+      "message": "Invalid indentation for given data table. Got 6, wanted 7",
+      "location": {
+        "line": 5,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for when data table. Got 6, wanted 7",
+      "location": {
+        "line": 8,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for and data table. Got 6, wanted 7",
+      "location": {
+        "line": 12,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for example table header. Got 6, wanted 7",
+      "location": {
+        "line": 16,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for example table row. Got 6, wanted 7",
+      "location": {
+        "line": 17,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for example table row. Got 6, wanted 7",
+      "location": {
+        "line": 18,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for example table row. Got 6, wanted 7",
+      "location": {
+        "line": 19,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for example table row. Got 6, wanted 7",
+      "location": {
+        "line": 20,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for example table row. Got 6, wanted 7",
+      "location": {
+        "line": 21,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for example table row. Got 6, wanted 7",
+      "location": {
+        "line": 22,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for given data table. Got 6, wanted 7",
+      "location": {
+        "line": 26,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for when data table. Got 6, wanted 7",
+      "location": {
+        "line": 29,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for example table header. Got 6, wanted 7",
+      "location": {
+        "line": 34,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for example table row. Got 6, wanted 7",
+      "location": {
+        "line": 35,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for example table row. Got 6, wanted 7",
+      "location": {
+        "line": 36,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for example table row. Got 6, wanted 7",
+      "location": {
+        "line": 37,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Scenario is missing a description.",
+      "location": {
+        "line": 3,
+        "column": 4
+      },
+      "severity": "error",
+      "rule": "scenario-description"
+    },
+    {
+      "message": "Scenario is missing a description.",
+      "location": {
+        "line": 24,
+        "column": 4
+      },
+      "severity": "error",
+      "rule": "scenario-description"
+    }
+  ],
+  "/Users/larrygoddard/Projects/sideProjects/gherklin/tests/acceptance/features/filename-snake-case.feature": [
+    {
+      "message": "Invalid indentation for given data table. Got 6, wanted 7",
+      "location": {
+        "line": 5,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for when data table. Got 6, wanted 7",
+      "location": {
+        "line": 8,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for and data table. Got 6, wanted 7",
+      "location": {
+        "line": 12,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for example table header. Got 6, wanted 7",
+      "location": {
+        "line": 16,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for example table row. Got 6, wanted 7",
+      "location": {
+        "line": 17,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for example table row. Got 6, wanted 7",
+      "location": {
+        "line": 18,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for example table row. Got 6, wanted 7",
+      "location": {
+        "line": 19,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for example table row. Got 6, wanted 7",
+      "location": {
+        "line": 20,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for example table row. Got 6, wanted 7",
+      "location": {
+        "line": 21,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for example table row. Got 6, wanted 7",
+      "location": {
+        "line": 22,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for given data table. Got 6, wanted 7",
+      "location": {
+        "line": 26,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for when data table. Got 6, wanted 7",
+      "location": {
+        "line": 29,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for example table header. Got 6, wanted 7",
+      "location": {
+        "line": 34,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for example table row. Got 6, wanted 7",
+      "location": {
+        "line": 35,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for example table row. Got 6, wanted 7",
+      "location": {
+        "line": 36,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for example table row. Got 6, wanted 7",
+      "location": {
+        "line": 37,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Scenario is missing a description.",
+      "location": {
+        "line": 3,
+        "column": 4
+      },
+      "severity": "error",
+      "rule": "scenario-description"
+    },
+    {
+      "message": "Scenario is missing a description.",
+      "location": {
+        "line": 24,
+        "column": 4
+      },
+      "severity": "error",
+      "rule": "scenario-description"
+    }
+  ],
+  "/Users/larrygoddard/Projects/sideProjects/gherklin/tests/acceptance/features/given-after-background.feature": [
+    {
+      "message": "Invalid indentation for when data table. Got 6, wanted 7",
+      "location": {
+        "line": 15,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for and data table. Got 6, wanted 7",
+      "location": {
+        "line": 19,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for when data table. Got 6, wanted 7",
+      "location": {
+        "line": 34,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for when data table. Got 6, wanted 7",
+      "location": {
+        "line": 47,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Scenario is missing a description.",
+      "location": {
+        "line": 3,
+        "column": 4
+      },
+      "severity": "error",
+      "rule": "scenario-description"
+    },
+    {
+      "message": "Scenario is missing a description.",
+      "location": {
+        "line": 22,
+        "column": 4
+      },
+      "severity": "error",
+      "rule": "scenario-description"
+    },
+    {
+      "message": "Scenario is missing a description.",
+      "location": {
+        "line": 38,
+        "column": 4
+      },
+      "severity": "error",
+      "rule": "scenario-description"
+    },
+    {
+      "message": "Feature name is too long. Expected max 20, got 22.",
+      "location": {
+        "line": 1,
+        "column": 2
+      },
+      "severity": "error",
+      "rule": "feature-name-length"
+    }
+  ],
+  "/Users/larrygoddard/Projects/sideProjects/gherklin/tests/acceptance/features/indentation.feature": [
+    {
+      "message": "Invalid indentation for when data table. Got 6, wanted 7",
+      "location": {
+        "line": 15,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for and data table. Got 6, wanted 7",
+      "location": {
+        "line": 19,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for when data table. Got 6, wanted 7",
+      "location": {
+        "line": 42,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for and data table. Got 6, wanted 7",
+      "location": {
+        "line": 46,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for when data table. Got 6, wanted 7",
+      "location": {
+        "line": 60,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for and data table. Got 6, wanted 7",
+      "location": {
+        "line": 64,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for when data table. Got 6, wanted 7",
+      "location": {
+        "line": 75,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for and data table. Got 6, wanted 7",
+      "location": {
+        "line": 79,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for when data table. Got 6, wanted 7",
+      "location": {
+        "line": 94,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for when data table. Got 6, wanted 7",
+      "location": {
+        "line": 105,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for and data table. Got 6, wanted 7",
+      "location": {
+        "line": 109,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Data table is not formatted correctly",
+      "location": {
+        "line": 19,
+        "column": 112
+      },
+      "severity": "warn",
+      "rule": "aligned-datatables"
+    },
+    {
+      "message": "Data table is not formatted correctly",
+      "location": {
+        "line": 20,
+        "column": 111
+      },
+      "severity": "warn",
+      "rule": "aligned-datatables"
+    },
+    {
+      "message": "Data table is not formatted correctly",
+      "location": {
+        "line": 21,
+        "column": 110
+      },
+      "severity": "warn",
+      "rule": "aligned-datatables"
+    },
+    {
+      "message": "Data table is not formatted correctly",
+      "location": {
+        "line": 36,
+        "column": 9
+      },
+      "severity": "warn",
+      "rule": "aligned-datatables"
+    },
+    {
+      "message": "Data table is not formatted correctly",
+      "location": {
+        "line": 36,
+        "column": 21
+      },
+      "severity": "warn",
+      "rule": "aligned-datatables"
+    },
+    {
+      "message": "Data table is not formatted correctly",
+      "location": {
+        "line": 37,
+        "column": 6
+      },
+      "severity": "warn",
+      "rule": "aligned-datatables"
+    },
+    {
+      "message": "Data table is not formatted correctly",
+      "location": {
+        "line": 37,
+        "column": 18
+      },
+      "severity": "warn",
+      "rule": "aligned-datatables"
+    },
+    {
+      "message": "Data table is not formatted correctly",
+      "location": {
+        "line": 38,
+        "column": 8
+      },
+      "severity": "warn",
+      "rule": "aligned-datatables"
+    },
+    {
+      "message": "Data table is not formatted correctly",
+      "location": {
+        "line": 38,
+        "column": 20
+      },
+      "severity": "warn",
+      "rule": "aligned-datatables"
+    },
+    {
+      "message": "Data table is not formatted correctly",
+      "location": {
+        "line": 46,
+        "column": 124
+      },
+      "severity": "warn",
+      "rule": "aligned-datatables"
+    },
+    {
+      "message": "Data table is not formatted correctly",
+      "location": {
+        "line": 47,
+        "column": 123
+      },
+      "severity": "warn",
+      "rule": "aligned-datatables"
+    },
+    {
+      "message": "Data table is not formatted correctly",
+      "location": {
+        "line": 48,
+        "column": 124
+      },
+      "severity": "warn",
+      "rule": "aligned-datatables"
+    },
+    {
+      "message": "Data table is not formatted correctly",
+      "location": {
+        "line": 50,
+        "column": 35
+      },
+      "severity": "warn",
+      "rule": "aligned-datatables"
+    },
+    {
+      "message": "Data table is not formatted correctly",
+      "location": {
+        "line": 50,
+        "column": 46
+      },
+      "severity": "warn",
+      "rule": "aligned-datatables"
+    },
+    {
+      "message": "Data table is not formatted correctly",
+      "location": {
+        "line": 50,
+        "column": 60
+      },
+      "severity": "warn",
+      "rule": "aligned-datatables"
+    },
+    {
+      "message": "Data table is not formatted correctly",
+      "location": {
+        "line": 75,
+        "column": 44
+      },
+      "severity": "warn",
+      "rule": "aligned-datatables"
+    },
+    {
+      "message": "Data table is not formatted correctly",
+      "location": {
+        "line": 79,
+        "column": 116
+      },
+      "severity": "warn",
+      "rule": "aligned-datatables"
+    },
+    {
+      "message": "Scenario is missing a description.",
+      "location": {
+        "line": 3,
+        "column": 4
+      },
+      "severity": "error",
+      "rule": "scenario-description"
+    },
+    {
+      "message": "Scenario is missing a description.",
+      "location": {
+        "line": 27,
+        "column": 4
+      },
+      "severity": "error",
+      "rule": "scenario-description"
+    },
+    {
+      "message": "Scenario is missing a description.",
+      "location": {
+        "line": 53,
+        "column": 4
+      },
+      "severity": "error",
+      "rule": "scenario-description"
+    },
+    {
+      "message": "Scenario is missing a description.",
+      "location": {
+        "line": 67,
+        "column": 4
+      },
+      "severity": "error",
+      "rule": "scenario-description"
+    },
+    {
+      "message": "Scenario is missing a description.",
+      "location": {
+        "line": 82,
+        "column": 4
+      },
+      "severity": "error",
+      "rule": "scenario-description"
+    },
+    {
+      "message": "Scenario is missing a description.",
+      "location": {
+        "line": 98,
+        "column": 4
+      },
+      "severity": "error",
+      "rule": "scenario-description"
+    }
+  ],
+  "/Users/larrygoddard/Projects/sideProjects/gherklin/tests/acceptance/features/keywords-in-logical-order.feature": [
+    {
+      "message": "Invalid indentation for when data table. Got 6, wanted 7",
+      "location": {
+        "line": 15,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for and data table. Got 6, wanted 7",
+      "location": {
+        "line": 19,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for when data table. Got 6, wanted 7",
+      "location": {
+        "line": 33,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for when data table. Got 6, wanted 7",
+      "location": {
+        "line": 46,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Data table is not formatted correctly",
+      "location": {
+        "line": 19,
+        "column": 138
+      },
+      "severity": "warn",
+      "rule": "aligned-datatables"
+    },
+    {
+      "message": "Scenario is missing a description.",
+      "location": {
+        "line": 3,
+        "column": 4
+      },
+      "severity": "error",
+      "rule": "scenario-description"
+    },
+    {
+      "message": "Scenario is missing a description.",
+      "location": {
+        "line": 22,
+        "column": 4
+      },
+      "severity": "error",
+      "rule": "scenario-description"
+    },
+    {
+      "message": "Scenario is missing a description.",
+      "location": {
+        "line": 37,
+        "column": 4
+      },
+      "severity": "error",
+      "rule": "scenario-description"
+    },
+    {
+      "message": "Feature name is too long. Expected max 20, got 25.",
+      "location": {
+        "line": 1,
+        "column": 2
+      },
+      "severity": "error",
+      "rule": "feature-name-length"
+    }
+  ],
+  "/Users/larrygoddard/Projects/sideProjects/gherklin/tests/acceptance/features/max-background-steps.feature": [
+    {
+      "message": "Invalid indentation for when data table. Got 6, wanted 7",
+      "location": {
+        "line": 17,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for and data table. Got 6, wanted 7",
+      "location": {
+        "line": 21,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for when data table. Got 6, wanted 7",
+      "location": {
+        "line": 36,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Data table is not formatted correctly",
+      "location": {
+        "line": 17,
+        "column": 39
+      },
+      "severity": "warn",
+      "rule": "aligned-datatables"
+    },
+    {
+      "message": "Scenario is missing a description.",
+      "location": {
+        "line": 3,
+        "column": 4
+      },
+      "severity": "error",
+      "rule": "scenario-description"
+    },
+    {
+      "message": "Scenario is missing a description.",
+      "location": {
+        "line": 24,
+        "column": 4
+      },
+      "severity": "error",
+      "rule": "scenario-description"
+    }
+  ],
+  "/Users/larrygoddard/Projects/sideProjects/gherklin/tests/acceptance/features/max-errors.feature": [
+    {
+      "message": "Invalid indentation for when data table. Got 6, wanted 7",
+      "location": {
+        "line": 10,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for and data table. Got 6, wanted 7",
+      "location": {
+        "line": 15,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for when data table. Got 6, wanted 7",
+      "location": {
+        "line": 26,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for when data table. Got 6, wanted 7",
+      "location": {
+        "line": 42,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Scenario is missing a description.",
+      "location": {
+        "line": 3,
+        "column": 4
+      },
+      "severity": "error",
+      "rule": "scenario-description"
+    },
+    {
+      "message": "Scenario is missing a description.",
+      "location": {
+        "line": 19,
+        "column": 4
+      },
+      "severity": "error",
+      "rule": "scenario-description"
+    },
+    {
+      "message": "Scenario is missing a description.",
+      "location": {
+        "line": 31,
+        "column": 4
+      },
+      "severity": "error",
+      "rule": "scenario-description"
+    }
+  ],
+  "/Users/larrygoddard/Projects/sideProjects/gherklin/tests/acceptance/features/max-scenarios.feature": [
+    {
+      "message": "Invalid indentation for when data table. Got 6, wanted 7",
+      "location": {
+        "line": 11,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for and data table. Got 6, wanted 7",
+      "location": {
+        "line": 15,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for when data table. Got 6, wanted 7",
+      "location": {
+        "line": 26,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Scenario is missing a description.",
+      "location": {
+        "line": 3,
+        "column": 4
+      },
+      "severity": "error",
+      "rule": "scenario-description"
+    },
+    {
+      "message": "Scenario is missing a description.",
+      "location": {
+        "line": 18,
+        "column": 4
+      },
+      "severity": "error",
+      "rule": "scenario-description"
+    }
+  ],
+  "/Users/larrygoddard/Projects/sideProjects/gherklin/tests/acceptance/features/max-steps-per-scenario.feature": [
+    {
+      "message": "Invalid indentation for when data table. Got 6, wanted 7",
+      "location": {
+        "line": 15,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for and data table. Got 6, wanted 7",
+      "location": {
+        "line": 19,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for when data table. Got 6, wanted 7",
+      "location": {
+        "line": 32,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Data table is not formatted correctly",
+      "location": {
+        "line": 15,
+        "column": 38
+      },
+      "severity": "warn",
+      "rule": "aligned-datatables"
+    },
+    {
+      "message": "Data table is not formatted correctly",
+      "location": {
+        "line": 19,
+        "column": 116
+      },
+      "severity": "warn",
+      "rule": "aligned-datatables"
+    },
+    {
+      "message": "Data table is not formatted correctly",
+      "location": {
+        "line": 32,
+        "column": 38
+      },
+      "severity": "warn",
+      "rule": "aligned-datatables"
+    },
+    {
+      "message": "Scenario is missing a description.",
+      "location": {
+        "line": 3,
+        "column": 4
+      },
+      "severity": "error",
+      "rule": "scenario-description"
+    },
+    {
+      "message": "Scenario is missing a description.",
+      "location": {
+        "line": 22,
+        "column": 4
+      },
+      "severity": "error",
+      "rule": "scenario-description"
+    },
+    {
+      "message": "Feature name is too long. Expected max 20, got 22.",
+      "location": {
+        "line": 1,
+        "column": 2
+      },
+      "severity": "error",
+      "rule": "feature-name-length"
+    }
+  ],
+  "/Users/larrygoddard/Projects/sideProjects/gherklin/tests/acceptance/features/new-line-at-eof.feature": [
+    {
+      "message": "Invalid indentation for when data table. Got 6, wanted 7",
+      "location": {
+        "line": 10,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for and data table. Got 6, wanted 7",
+      "location": {
+        "line": 14,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for when data table. Got 6, wanted 7",
+      "location": {
+        "line": 25,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for when data table. Got 6, wanted 7",
+      "location": {
+        "line": 36,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Scenario is missing a description.",
+      "location": {
+        "line": 3,
+        "column": 4
+      },
+      "severity": "error",
+      "rule": "scenario-description"
+    },
+    {
+      "message": "Scenario is missing a description.",
+      "location": {
+        "line": 17,
+        "column": 4
+      },
+      "severity": "error",
+      "rule": "scenario-description"
+    },
+    {
+      "message": "Scenario is missing a description.",
+      "location": {
+        "line": 29,
+        "column": 4
+      },
+      "severity": "error",
+      "rule": "scenario-description"
+    }
+  ],
+  "/Users/larrygoddard/Projects/sideProjects/gherklin/tests/acceptance/features/no-and-but-first.feature": [
+    {
+      "message": "Invalid indentation for when data table. Got 6, wanted 7",
+      "location": {
+        "line": 13,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for and data table. Got 6, wanted 7",
+      "location": {
+        "line": 17,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for when data table. Got 6, wanted 7",
+      "location": {
+        "line": 30,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for and data table. Got 6, wanted 7",
+      "location": {
+        "line": 34,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for when data table. Got 6, wanted 7",
+      "location": {
+        "line": 47,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Data table is not formatted correctly",
+      "location": {
+        "line": 13,
+        "column": 35
+      },
+      "severity": "warn",
+      "rule": "aligned-datatables"
+    },
+    {
+      "message": "Data table is not formatted correctly",
+      "location": {
+        "line": 17,
+        "column": 135
+      },
+      "severity": "warn",
+      "rule": "aligned-datatables"
+    },
+    {
+      "message": "Data table is not formatted correctly",
+      "location": {
+        "line": 30,
+        "column": 35
+      },
+      "severity": "warn",
+      "rule": "aligned-datatables"
+    },
+    {
+      "message": "Data table is not formatted correctly",
+      "location": {
+        "line": 34,
+        "column": 135
+      },
+      "severity": "warn",
+      "rule": "aligned-datatables"
+    },
+    {
+      "message": "Data table is not formatted correctly",
+      "location": {
+        "line": 47,
+        "column": 35
+      },
+      "severity": "warn",
+      "rule": "aligned-datatables"
+    },
+    {
+      "message": "Scenario is missing a description.",
+      "location": {
+        "line": 3,
+        "column": 4
+      },
+      "severity": "error",
+      "rule": "scenario-description"
+    },
+    {
+      "message": "Scenario is missing a description.",
+      "location": {
+        "line": 20,
+        "column": 4
+      },
+      "severity": "error",
+      "rule": "scenario-description"
+    },
+    {
+      "message": "Scenario is missing a description.",
+      "location": {
+        "line": 37,
+        "column": 4
+      },
+      "severity": "error",
+      "rule": "scenario-description"
+    }
+  ],
+  "/Users/larrygoddard/Projects/sideProjects/gherklin/tests/acceptance/features/no-background-only.feature": [
+    {
+      "message": "Invalid indentation for when data table. Got 6, wanted 7",
+      "location": {
+        "line": 10,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for and data table. Got 6, wanted 7",
+      "location": {
+        "line": 14,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for when data table. Got 6, wanted 7",
+      "location": {
+        "line": 26,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Scenario is missing a description.",
+      "location": {
+        "line": 3,
+        "column": 4
+      },
+      "severity": "error",
+      "rule": "scenario-description"
+    },
+    {
+      "message": "Scenario is missing a description.",
+      "location": {
+        "line": 17,
+        "column": 4
+      },
+      "severity": "error",
+      "rule": "scenario-description"
+    }
+  ],
+  "/Users/larrygoddard/Projects/sideProjects/gherklin/tests/acceptance/features/no-consecutive-empty-lines.feature": [
+    {
+      "message": "Invalid indentation for when data table. Got 6, wanted 7",
+      "location": {
+        "line": 13,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for and data table. Got 6, wanted 7",
+      "location": {
+        "line": 17,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for when data table. Got 6, wanted 7",
+      "location": {
+        "line": 29,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Data table is not formatted correctly",
+      "location": {
+        "line": 17,
+        "column": 118
+      },
+      "severity": "warn",
+      "rule": "aligned-datatables"
+    },
+    {
+      "message": "Scenario is missing a description.",
+      "location": {
+        "line": 3,
+        "column": 4
+      },
+      "severity": "error",
+      "rule": "scenario-description"
+    },
+    {
+      "message": "Scenario is missing a description.",
+      "location": {
+        "line": 20,
+        "column": 4
+      },
+      "severity": "error",
+      "rule": "scenario-description"
+    },
+    {
+      "message": "Feature name is too long. Expected max 20, got 26.",
+      "location": {
+        "line": 1,
+        "column": 2
+      },
+      "severity": "error",
+      "rule": "feature-name-length"
+    }
+  ],
+  "/Users/larrygoddard/Projects/sideProjects/gherklin/tests/acceptance/features/no-dupe-features.feature": [
+    {
+      "message": "Invalid indentation for when data table. Got 6, wanted 7",
+      "location": {
+        "line": 13,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for and data table. Got 6, wanted 7",
+      "location": {
+        "line": 17,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Scenario is missing a description.",
+      "location": {
+        "line": 3,
+        "column": 4
+      },
+      "severity": "error",
+      "rule": "scenario-description"
+    }
+  ],
+  "/Users/larrygoddard/Projects/sideProjects/gherklin/tests/acceptance/features/no-dupe-scenarios.feature": [
+    {
+      "message": "Invalid indentation for when data table. Got 6, wanted 7",
+      "location": {
+        "line": 11,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for and data table. Got 6, wanted 7",
+      "location": {
+        "line": 15,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Scenario is missing a description.",
+      "location": {
+        "line": 3,
+        "column": 4
+      },
+      "severity": "error",
+      "rule": "scenario-description"
+    }
+  ],
+  "/Users/larrygoddard/Projects/sideProjects/gherklin/tests/acceptance/features/no-duplicate-steps.feature": [
+    {
+      "message": "Invalid indentation for when data table. Got 6, wanted 7",
+      "location": {
+        "line": 14,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for and data table. Got 6, wanted 7",
+      "location": {
+        "line": 18,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for when data table. Got 6, wanted 7",
+      "location": {
+        "line": 31,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Scenario is missing a description.",
+      "location": {
+        "line": 3,
+        "column": 4
+      },
+      "severity": "error",
+      "rule": "scenario-description"
+    },
+    {
+      "message": "Scenario is missing a description.",
+      "location": {
+        "line": 21,
+        "column": 4
+      },
+      "severity": "error",
+      "rule": "scenario-description"
+    }
+  ],
+  "/Users/larrygoddard/Projects/sideProjects/gherklin/tests/acceptance/features/no-empty-file.feature": [
+    {
+      "message": "Invalid indentation for when data table. Got 6, wanted 7",
+      "location": {
+        "line": 8,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for and data table. Got 6, wanted 7",
+      "location": {
+        "line": 12,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Scenario is missing a description.",
+      "location": {
+        "line": 3,
+        "column": 4
+      },
+      "severity": "error",
+      "rule": "scenario-description"
+    }
+  ],
+  "/Users/larrygoddard/Projects/sideProjects/gherklin/tests/acceptance/features/no-empty-scenario.feature": [
+    {
+      "message": "Invalid indentation for when data table. Got 6, wanted 7",
+      "location": {
+        "line": 10,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for and data table. Got 6, wanted 7",
+      "location": {
+        "line": 14,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for when data table. Got 6, wanted 7",
+      "location": {
+        "line": 27,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Data table is not formatted correctly",
+      "location": {
+        "line": 10,
+        "column": 36
+      },
+      "severity": "warn",
+      "rule": "aligned-datatables"
+    },
+    {
+      "message": "Data table is not formatted correctly",
+      "location": {
+        "line": 14,
+        "column": 104
+      },
+      "severity": "warn",
+      "rule": "aligned-datatables"
+    },
+    {
+      "message": "Data table is not formatted correctly",
+      "location": {
+        "line": 27,
+        "column": 36
+      },
+      "severity": "warn",
+      "rule": "aligned-datatables"
+    },
+    {
+      "message": "Scenario is missing a description.",
+      "location": {
+        "line": 3,
+        "column": 4
+      },
+      "severity": "error",
+      "rule": "scenario-description"
+    },
+    {
+      "message": "Scenario is missing a description.",
+      "location": {
+        "line": 17,
+        "column": 4
+      },
+      "severity": "error",
+      "rule": "scenario-description"
+    }
+  ],
+  "/Users/larrygoddard/Projects/sideProjects/gherklin/tests/acceptance/features/no-full-stop.feature": [
+    {
+      "message": "Invalid indentation for when data table. Got 6, wanted 7",
+      "location": {
+        "line": 11,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for and data table. Got 6, wanted 7",
+      "location": {
+        "line": 15,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for when data table. Got 6, wanted 7",
+      "location": {
+        "line": 29,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for and data table. Got 6, wanted 7",
+      "location": {
+        "line": 33,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for when data table. Got 6, wanted 7",
+      "location": {
+        "line": 44,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Scenario is missing a description.",
+      "location": {
+        "line": 3,
+        "column": 4
+      },
+      "severity": "error",
+      "rule": "scenario-description"
+    },
+    {
+      "message": "Scenario is missing a description.",
+      "location": {
+        "line": 36,
+        "column": 4
+      },
+      "severity": "error",
+      "rule": "scenario-description"
+    }
+  ],
+  "/Users/larrygoddard/Projects/sideProjects/gherklin/tests/acceptance/features/no-inconsistent-quotes.feature": [
+    {
+      "message": "Invalid indentation for when data table. Got 6, wanted 7",
+      "location": {
+        "line": 12,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for and data table. Got 6, wanted 7",
+      "location": {
+        "line": 16,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for when data table. Got 6, wanted 7",
+      "location": {
+        "line": 29,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for when data table. Got 6, wanted 7",
+      "location": {
+        "line": 42,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for when data table. Got 6, wanted 7",
+      "location": {
+        "line": 55,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for and data table. Got 6, wanted 7",
+      "location": {
+        "line": 59,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for when data table. Got 6, wanted 7",
+      "location": {
+        "line": 71,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for and data table. Got 6, wanted 7",
+      "location": {
+        "line": 75,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Scenario is missing a description.",
+      "location": {
+        "line": 3,
+        "column": 4
+      },
+      "severity": "error",
+      "rule": "scenario-description"
+    },
+    {
+      "message": "Scenario is missing a description.",
+      "location": {
+        "line": 20,
+        "column": 4
+      },
+      "severity": "error",
+      "rule": "scenario-description"
+    },
+    {
+      "message": "Scenario is missing a description.",
+      "location": {
+        "line": 33,
+        "column": 4
+      },
+      "severity": "error",
+      "rule": "scenario-description"
+    },
+    {
+      "message": "Scenario is missing a description.",
+      "location": {
+        "line": 46,
+        "column": 4
+      },
+      "severity": "error",
+      "rule": "scenario-description"
+    },
+    {
+      "message": "Scenario is missing a description.",
+      "location": {
+        "line": 62,
+        "column": 4
+      },
+      "severity": "error",
+      "rule": "scenario-description"
+    },
+    {
+      "message": "Feature name is too long. Expected max 20, got 22.",
+      "location": {
+        "line": 1,
+        "column": 2
+      },
+      "severity": "error",
+      "rule": "feature-name-length"
+    }
+  ],
+  "/Users/larrygoddard/Projects/sideProjects/gherklin/tests/acceptance/features/no-punctuation-in-titles.feature": [
+    {
+      "message": "Invalid indentation for when data table. Got 6, wanted 7",
+      "location": {
+        "line": 11,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for and data table. Got 6, wanted 7",
+      "location": {
+        "line": 15,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for when data table. Got 6, wanted 7",
+      "location": {
+        "line": 26,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for and data table. Got 6, wanted 7",
+      "location": {
+        "line": 30,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for when data table. Got 6, wanted 7",
+      "location": {
+        "line": 41,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Data table is not formatted correctly",
+      "location": {
+        "line": 11,
+        "column": 43
+      },
+      "severity": "warn",
+      "rule": "aligned-datatables"
+    },
+    {
+      "message": "Data table is not formatted correctly",
+      "location": {
+        "line": 15,
+        "column": 71
+      },
+      "severity": "warn",
+      "rule": "aligned-datatables"
+    },
+    {
+      "message": "Data table is not formatted correctly",
+      "location": {
+        "line": 26,
+        "column": 43
+      },
+      "severity": "warn",
+      "rule": "aligned-datatables"
+    },
+    {
+      "message": "Data table is not formatted correctly",
+      "location": {
+        "line": 30,
+        "column": 71
+      },
+      "severity": "warn",
+      "rule": "aligned-datatables"
+    },
+    {
+      "message": "Data table is not formatted correctly",
+      "location": {
+        "line": 30,
+        "column": 127
+      },
+      "severity": "warn",
+      "rule": "aligned-datatables"
+    },
+    {
+      "message": "Data table is not formatted correctly",
+      "location": {
+        "line": 41,
+        "column": 43
+      },
+      "severity": "warn",
+      "rule": "aligned-datatables"
+    },
+    {
+      "message": "Scenario is missing a description.",
+      "location": {
+        "line": 3,
+        "column": 4
+      },
+      "severity": "error",
+      "rule": "scenario-description"
+    },
+    {
+      "message": "Scenario is missing a description.",
+      "location": {
+        "line": 18,
+        "column": 4
+      },
+      "severity": "error",
+      "rule": "scenario-description"
+    },
+    {
+      "message": "Scenario is missing a description.",
+      "location": {
+        "line": 33,
+        "column": 4
+      },
+      "severity": "error",
+      "rule": "scenario-description"
+    },
+    {
+      "message": "Feature name is too long. Expected max 20, got 24.",
+      "location": {
+        "line": 1,
+        "column": 2
+      },
+      "severity": "error",
+      "rule": "feature-name-length"
+    }
+  ],
+  "/Users/larrygoddard/Projects/sideProjects/gherklin/tests/acceptance/features/no-scenario-splat.feature": [
+    {
+      "message": "Invalid indentation for when data table. Got 6, wanted 7",
+      "location": {
+        "line": 14,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for and data table. Got 6, wanted 7",
+      "location": {
+        "line": 18,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for when data table. Got 6, wanted 7",
+      "location": {
+        "line": 34,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Scenario is missing a description.",
+      "location": {
+        "line": 3,
+        "column": 4
+      },
+      "severity": "error",
+      "rule": "scenario-description"
+    },
+    {
+      "message": "Scenario is missing a description.",
+      "location": {
+        "line": 22,
+        "column": 4
+      },
+      "severity": "error",
+      "rule": "scenario-description"
+    }
+  ],
+  "/Users/larrygoddard/Projects/sideProjects/gherklin/tests/acceptance/features/no-similar-scenarios.feature": [
+    {
+      "message": "Invalid indentation for when data table. Got 6, wanted 7",
+      "location": {
+        "line": 16,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for and data table. Got 6, wanted 7",
+      "location": {
+        "line": 20,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Scenario is missing a description.",
+      "location": {
+        "line": 3,
+        "column": 4
+      },
+      "severity": "error",
+      "rule": "scenario-description"
+    }
+  ],
+  "/Users/larrygoddard/Projects/sideProjects/gherklin/tests/acceptance/features/no-single-example-outline.feature": [
+    {
+      "message": "Invalid indentation for when data table. Got 6, wanted 7",
+      "location": {
+        "line": 15,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for and data table. Got 6, wanted 7",
+      "location": {
+        "line": 19,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Scenario is missing a description.",
+      "location": {
+        "line": 3,
+        "column": 4
+      },
+      "severity": "error",
+      "rule": "scenario-description"
+    },
+    {
+      "message": "Feature name is too long. Expected max 20, got 25.",
+      "location": {
+        "line": 1,
+        "column": 2
+      },
+      "severity": "error",
+      "rule": "feature-name-length"
+    }
+  ],
+  "/Users/larrygoddard/Projects/sideProjects/gherklin/tests/acceptance/features/no-trailing-spaces.feature": [
+    {
+      "message": "Invalid indentation for when data table. Got 6, wanted 7",
+      "location": {
+        "line": 16,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for and data table. Got 6, wanted 7",
+      "location": {
+        "line": 20,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for when data table. Got 6, wanted 7",
+      "location": {
+        "line": 36,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    }
+  ],
+  "/Users/larrygoddard/Projects/sideProjects/gherklin/tests/acceptance/features/no-typographer-quotes.feature": [
+    {
+      "message": "Invalid indentation for when data table. Got 6, wanted 7",
+      "location": {
+        "line": 12,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for and data table. Got 6, wanted 7",
+      "location": {
+        "line": 16,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for when data table. Got 6, wanted 7",
+      "location": {
+        "line": 31,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for and data table. Got 6, wanted 7",
+      "location": {
+        "line": 35,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for when data table. Got 6, wanted 7",
+      "location": {
+        "line": 48,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for and data table. Got 6, wanted 7",
+      "location": {
+        "line": 52,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Scenario is missing a description.",
+      "location": {
+        "line": 3,
+        "column": 4
+      },
+      "severity": "error",
+      "rule": "scenario-description"
+    },
+    {
+      "message": "Scenario is missing a description.",
+      "location": {
+        "line": 22,
+        "column": 4
+      },
+      "severity": "error",
+      "rule": "scenario-description"
+    },
+    {
+      "message": "Scenario is missing a description.",
+      "location": {
+        "line": 39,
+        "column": 4
+      },
+      "severity": "error",
+      "rule": "scenario-description"
+    },
+    {
+      "message": "Feature name is too long. Expected max 20, got 21.",
+      "location": {
+        "line": 1,
+        "column": 2
+      },
+      "severity": "error",
+      "rule": "feature-name-length"
+    }
+  ],
+  "/Users/larrygoddard/Projects/sideProjects/gherklin/tests/acceptance/features/no-unnamed-scenarios.feature": [
+    {
+      "message": "Invalid indentation for when data table. Got 6, wanted 7",
+      "location": {
+        "line": 12,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for and data table. Got 6, wanted 7",
+      "location": {
+        "line": 16,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Scenario is missing a description.",
+      "location": {
+        "line": 3,
+        "column": 4
+      },
+      "severity": "error",
+      "rule": "scenario-description"
+    }
+  ],
+  "/Users/larrygoddard/Projects/sideProjects/gherklin/tests/acceptance/features/one-feature-per-file.feature": [
+    {
+      "message": "Invalid indentation for when data table. Got 6, wanted 7",
+      "location": {
+        "line": 11,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Data table is not formatted correctly",
+      "location": {
+        "line": 11,
+        "column": 39
+      },
+      "severity": "warn",
+      "rule": "aligned-datatables"
+    },
+    {
+      "message": "Scenario is missing a description.",
+      "location": {
+        "line": 3,
+        "column": 4
+      },
+      "severity": "error",
+      "rule": "scenario-description"
+    }
+  ],
+  "/Users/larrygoddard/Projects/sideProjects/gherklin/tests/acceptance/features/outline-placeholder-consistency.feature": [
+    {
+      "message": "Invalid indentation for when data table. Got 6, wanted 7",
+      "location": {
+        "line": 15,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for and data table. Got 6, wanted 7",
+      "location": {
+        "line": 19,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for when data table. Got 6, wanted 7",
+      "location": {
+        "line": 33,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for and data table. Got 6, wanted 7",
+      "location": {
+        "line": 37,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for when data table. Got 6, wanted 7",
+      "location": {
+        "line": 52,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Data table is not formatted correctly",
+      "location": {
+        "line": 15,
+        "column": 53
+      },
+      "severity": "warn",
+      "rule": "aligned-datatables"
+    },
+    {
+      "message": "Data table is not formatted correctly",
+      "location": {
+        "line": 19,
+        "column": 78
+      },
+      "severity": "warn",
+      "rule": "aligned-datatables"
+    },
+    {
+      "message": "Data table is not formatted correctly",
+      "location": {
+        "line": 19,
+        "column": 147
+      },
+      "severity": "warn",
+      "rule": "aligned-datatables"
+    },
+    {
+      "message": "Data table is not formatted correctly",
+      "location": {
+        "line": 33,
+        "column": 53
+      },
+      "severity": "warn",
+      "rule": "aligned-datatables"
+    },
+    {
+      "message": "Data table is not formatted correctly",
+      "location": {
+        "line": 37,
+        "column": 78
+      },
+      "severity": "warn",
+      "rule": "aligned-datatables"
+    },
+    {
+      "message": "Data table is not formatted correctly",
+      "location": {
+        "line": 37,
+        "column": 146
+      },
+      "severity": "warn",
+      "rule": "aligned-datatables"
+    },
+    {
+      "message": "Data table is not formatted correctly",
+      "location": {
+        "line": 52,
+        "column": 53
+      },
+      "severity": "warn",
+      "rule": "aligned-datatables"
+    },
+    {
+      "message": "Scenario is missing a description.",
+      "location": {
+        "line": 3,
+        "column": 4
+      },
+      "severity": "error",
+      "rule": "scenario-description"
+    },
+    {
+      "message": "Scenario is missing a description.",
+      "location": {
+        "line": 22,
+        "column": 4
+      },
+      "severity": "error",
+      "rule": "scenario-description"
+    },
+    {
+      "message": "Scenario is missing a description.",
+      "location": {
+        "line": 40,
+        "column": 4
+      },
+      "severity": "error",
+      "rule": "scenario-description"
+    },
+    {
+      "message": "Feature name is too long. Expected max 20, got 31.",
+      "location": {
+        "line": 1,
+        "column": 2
+      },
+      "severity": "error",
+      "rule": "feature-name-length"
+    }
+  ],
+  "/Users/larrygoddard/Projects/sideProjects/gherklin/tests/acceptance/features/required-tags.feature": [
+    {
+      "message": "Invalid indentation for when data table. Got 6, wanted 7",
+      "location": {
+        "line": 11,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for and data table. Got 6, wanted 7",
+      "location": {
+        "line": 15,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for when data table. Got 6, wanted 7",
+      "location": {
+        "line": 27,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Data table is not formatted correctly",
+      "location": {
+        "line": 11,
+        "column": 42
+      },
+      "severity": "warn",
+      "rule": "aligned-datatables"
+    },
+    {
+      "message": "Data table is not formatted correctly",
+      "location": {
+        "line": 27,
+        "column": 42
+      },
+      "severity": "warn",
+      "rule": "aligned-datatables"
+    },
+    {
+      "message": "Scenario is missing a description.",
+      "location": {
+        "line": 3,
+        "column": 4
+      },
+      "severity": "error",
+      "rule": "scenario-description"
+    },
+    {
+      "message": "Scenario is missing a description.",
+      "location": {
+        "line": 18,
+        "column": 4
+      },
+      "severity": "error",
+      "rule": "scenario-description"
+    }
+  ],
+  "/Users/larrygoddard/Projects/sideProjects/gherklin/tests/acceptance/features/scenario-action.feature": [
+    {
+      "message": "Invalid indentation for when data table. Got 6, wanted 7",
+      "location": {
+        "line": 12,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for and data table. Got 6, wanted 7",
+      "location": {
+        "line": 16,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for when data table. Got 6, wanted 7",
+      "location": {
+        "line": 28,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Scenario is missing a description.",
+      "location": {
+        "line": 3,
+        "column": 4
+      },
+      "severity": "error",
+      "rule": "scenario-description"
+    },
+    {
+      "message": "Scenario is missing a description.",
+      "location": {
+        "line": 19,
+        "column": 4
+      },
+      "severity": "error",
+      "rule": "scenario-description"
+    }
+  ],
+  "/Users/larrygoddard/Projects/sideProjects/gherklin/tests/acceptance/features/scenario-description.feature": [
+    {
+      "message": "Invalid indentation for when data table. Got 6, wanted 7",
+      "location": {
+        "line": 11,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for and data table. Got 6, wanted 7",
+      "location": {
+        "line": 15,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for when data table. Got 6, wanted 7",
+      "location": {
+        "line": 29,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Data table is not formatted correctly",
+      "location": {
+        "line": 11,
+        "column": 41
+      },
+      "severity": "warn",
+      "rule": "aligned-datatables"
+    },
+    {
+      "message": "Data table is not formatted correctly",
+      "location": {
+        "line": 15,
+        "column": 104
+      },
+      "severity": "warn",
+      "rule": "aligned-datatables"
+    },
+    {
+      "message": "Data table is not formatted correctly",
+      "location": {
+        "line": 29,
+        "column": 48
+      },
+      "severity": "warn",
+      "rule": "aligned-datatables"
+    },
+    {
+      "message": "Scenario is missing a description.",
+      "location": {
+        "line": 3,
+        "column": 4
+      },
+      "severity": "error",
+      "rule": "scenario-description"
+    },
+    {
+      "message": "Scenario is missing a description.",
+      "location": {
+        "line": 18,
+        "column": 4
+      },
+      "severity": "error",
+      "rule": "scenario-description"
+    }
+  ],
+  "/Users/larrygoddard/Projects/sideProjects/gherklin/tests/acceptance/features/scenario-name-length.feature": [
+    {
+      "message": "Invalid indentation for when data table. Got 6, wanted 7",
+      "location": {
+        "line": 10,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for and data table. Got 6, wanted 7",
+      "location": {
+        "line": 14,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for when data table. Got 6, wanted 7",
+      "location": {
+        "line": 24,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Scenario is missing a description.",
+      "location": {
+        "line": 3,
+        "column": 4
+      },
+      "severity": "error",
+      "rule": "scenario-description"
+    },
+    {
+      "message": "Scenario is missing a description.",
+      "location": {
+        "line": 17,
+        "column": 4
+      },
+      "severity": "error",
+      "rule": "scenario-description"
+    }
+  ],
+  "/Users/larrygoddard/Projects/sideProjects/gherklin/tests/acceptance/features/scenario-outline-has-examples.feature": [
+    {
+      "message": "Invalid indentation for when data table. Got 6, wanted 7",
+      "location": {
+        "line": 13,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for and data table. Got 6, wanted 7",
+      "location": {
+        "line": 17,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for when data table. Got 6, wanted 7",
+      "location": {
+        "line": 31,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Data table is not formatted correctly",
+      "location": {
+        "line": 17,
+        "column": 135
+      },
+      "severity": "warn",
+      "rule": "aligned-datatables"
+    },
+    {
+      "message": "Scenario is missing a description.",
+      "location": {
+        "line": 3,
+        "column": 4
+      },
+      "severity": "error",
+      "rule": "scenario-description"
+    },
+    {
+      "message": "Scenario is missing a description.",
+      "location": {
+        "line": 20,
+        "column": 4
+      },
+      "severity": "error",
+      "rule": "scenario-description"
+    },
+    {
+      "message": "Feature name is too long. Expected max 20, got 29.",
+      "location": {
+        "line": 1,
+        "column": 2
+      },
+      "severity": "error",
+      "rule": "feature-name-length"
+    }
+  ],
+  "/Users/larrygoddard/Projects/sideProjects/gherklin/tests/acceptance/features/scenario-verification.feature": [
+    {
+      "message": "Invalid indentation for when data table. Got 6, wanted 7",
+      "location": {
+        "line": 11,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for and data table. Got 6, wanted 7",
+      "location": {
+        "line": 15,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for when data table. Got 6, wanted 7",
+      "location": {
+        "line": 27,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Scenario is missing a description.",
+      "location": {
+        "line": 3,
+        "column": 4
+      },
+      "severity": "error",
+      "rule": "scenario-description"
+    },
+    {
+      "message": "Scenario is missing a description.",
+      "location": {
+        "line": 18,
+        "column": 4
+      },
+      "severity": "error",
+      "rule": "scenario-description"
+    },
+    {
+      "message": "Feature name is too long. Expected max 20, got 21.",
+      "location": {
+        "line": 1,
+        "column": 2
+      },
+      "severity": "error",
+      "rule": "feature-name-length"
+    }
+  ],
+  "/Users/larrygoddard/Projects/sideProjects/gherklin/tests/acceptance/features/steps-length.feature": [
+    {
+      "message": "Invalid indentation for when data table. Got 6, wanted 7",
+      "location": {
+        "line": 12,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for and data table. Got 6, wanted 7",
+      "location": {
+        "line": 16,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for when data table. Got 6, wanted 7",
+      "location": {
+        "line": 29,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Data table is not formatted correctly",
+      "location": {
+        "line": 16,
+        "column": 114
+      },
+      "severity": "warn",
+      "rule": "aligned-datatables"
+    },
+    {
+      "message": "Data table is not formatted correctly",
+      "location": {
+        "line": 29,
+        "column": 40
+      },
+      "severity": "warn",
+      "rule": "aligned-datatables"
+    },
+    {
+      "message": "Scenario is missing a description.",
+      "location": {
+        "line": 3,
+        "column": 4
+      },
+      "severity": "error",
+      "rule": "scenario-description"
+    },
+    {
+      "message": "Scenario is missing a description.",
+      "location": {
+        "line": 19,
+        "column": 4
+      },
+      "severity": "error",
+      "rule": "scenario-description"
+    }
+  ],
+  "/Users/larrygoddard/Projects/sideProjects/gherklin/tests/acceptance/features/tag-format.feature": [
+    {
+      "message": "Invalid indentation for when data table. Got 6, wanted 7",
+      "location": {
+        "line": 12,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for and data table. Got 6, wanted 7",
+      "location": {
+        "line": 16,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for when data table. Got 6, wanted 7",
+      "location": {
+        "line": 28,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Data table is not formatted correctly",
+      "location": {
+        "line": 12,
+        "column": 56
+      },
+      "severity": "warn",
+      "rule": "aligned-datatables"
+    },
+    {
+      "message": "Data table is not formatted correctly",
+      "location": {
+        "line": 28,
+        "column": 56
+      },
+      "severity": "warn",
+      "rule": "aligned-datatables"
+    },
+    {
+      "message": "Scenario is missing a description.",
+      "location": {
+        "line": 3,
+        "column": 4
+      },
+      "severity": "error",
+      "rule": "scenario-description"
+    },
+    {
+      "message": "Scenario is missing a description.",
+      "location": {
+        "line": 19,
+        "column": 4
+      },
+      "severity": "error",
+      "rule": "scenario-description"
+    }
+  ],
+  "/Users/larrygoddard/Projects/sideProjects/gherklin/tests/acceptance/features/unique-examples.feature": [
+    {
+      "message": "Invalid indentation for when data table. Got 6, wanted 7",
+      "location": {
+        "line": 18,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for and data table. Got 6, wanted 7",
+      "location": {
+        "line": 22,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Invalid indentation for when data table. Got 6, wanted 7",
+      "location": {
+        "line": 40,
+        "column": 7
+      },
+      "severity": "warn",
+      "rule": "indentation"
+    },
+    {
+      "message": "Scenario is missing a description.",
+      "location": {
+        "line": 3,
+        "column": 4
+      },
+      "severity": "error",
+      "rule": "scenario-description"
+    },
+    {
+      "message": "Scenario is missing a description.",
+      "location": {
+        "line": 25,
+        "column": 4
+      },
+      "severity": "error",
+      "rule": "scenario-description"
+    }
+  ]
+}

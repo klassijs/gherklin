@@ -17,7 +17,7 @@ export default class Runner {
     public gherkinFiles: string[] = []
 
     private config!: Config
-    private reporter!: Reporter
+    private reporters!: Reporter[]
     private ruleLoader!: RuleLoader
 
     constructor(gherklinConfig?: GherklinConfiguration) {
@@ -41,7 +41,7 @@ export default class Runner {
         const cwdBase = process.cwd()
 
         this.ruleLoader = new RuleLoader(this.config)
-        this.reporter = this.getReporter()
+        this.reporters = this.getReporters()
 
         // --- Resolve feature sources (files or directory) ------------------------
         const envFiles = process.env.GHERKLIN_FEATURE_FILES
@@ -112,16 +112,17 @@ export default class Runner {
 
             const ruleErrors = await this.ruleLoader.runRules(document)
             if (ruleErrors && ruleErrors.length) {
-                this.reporter.addErrors(filename, ruleErrors)
+                for (const r of this.reporters) r.addErrors(filename, ruleErrors)
             }
         }
 
-        if (this.reporter.errors.size) {
+        const primary = this.reporters[0]
+        if (primary.errors.size) {
             const maxAllowedErrors = this.config.maxErrors ?? 0
             let allWarns = true
 
-            for (const key of this.reporter.errors.keys()) {
-                const errors = this.reporter.errors.get(key) ?? []
+            for (const key of primary.errors.keys()) {
+                const errors = primary.errors.get(key) ?? []
                 const hasErrorSeverity = errors.some(err => err.severity === Severity.error)
                 if (hasErrorSeverity) {
                     allWarns = false
@@ -129,20 +130,20 @@ export default class Runner {
                 }
             }
 
-            const totalErrorCount = this.reporter.errorCount()
+            const totalErrorCount = primary.errorCount()
             const success = allWarns === true || totalErrorCount <= maxAllowedErrors
 
-            this.reporter.write()
+            for (const r of this.reporters) r.write()
 
             return {
                 success,
-                errors: this.reporter.errors,
+                errors: primary.errors,
                 errorCount: totalErrorCount,
                 schemaErrors: new Map(),
             }
         }
 
-        if (!(this.reporter instanceof NullReporter)) {
+        if (this.reporters.some(r => !(r instanceof NullReporter))) {
             logger.info(chalk.green('✓ Gherklin found no errors!'))
         }
 
@@ -154,27 +155,36 @@ export default class Runner {
         }
     }
 
-    public getReporter(): Reporter {
-        const reporterConfig = Object.assign({}, this.config?.reporter, {
-            configDirectory: this.config.configDirectory ?? process.cwd(),
-        }) as ReporterConfig
+    public getReporters(): Reporter[] {
+        const raw = this.config?.reporter
+        const configs: ReporterConfig[] = Array.isArray(raw)
+            ? raw
+            : raw != null
+                ? [raw]
+                : [{ type: 'stdout', configDirectory: this.config.configDirectory ?? process.cwd() }]
 
-        // Resolve relative outFile from process.cwd() so report is written in the invoking project
-        // (e.g. when config lives in node_modules/OAF/..., report goes to project/reports/)
-        if (reporterConfig.outFile && !path.isAbsolute(reporterConfig.outFile)) {
-            reporterConfig.outFile = path.resolve(process.cwd(), reporterConfig.outFile)
-        }
+        const baseDir = this.config.configDirectory ?? process.cwd()
+        return configs.map((reporterConfig): Reporter => {
+            const merged = {
+                ...reporterConfig,
+                configDirectory: reporterConfig.configDirectory ?? baseDir,
+            } as ReporterConfig
 
-        switch (reporterConfig.type) {
-            case 'html':
-                return new HTMLReporter(reporterConfig)
-            case 'json':
-                return new JSONReporter(reporterConfig)
-            case 'null':
-                return new NullReporter(reporterConfig)
-            case 'stdout':
-            default:
-                return new STDOUTReporter(reporterConfig)
-        }
+            if (merged.outFile && !path.isAbsolute(merged.outFile)) {
+                merged.outFile = path.resolve(process.cwd(), merged.outFile)
+            }
+
+            switch (merged.type) {
+                case 'html':
+                    return new HTMLReporter(merged)
+                case 'json':
+                    return new JSONReporter(merged)
+                case 'null':
+                    return new NullReporter(merged)
+                case 'stdout':
+                default:
+                    return new STDOUTReporter(merged)
+            }
+        })
     }
 }

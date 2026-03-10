@@ -2,7 +2,11 @@
 # Use: npx gherklin  (or npm run lint:features)
 
 reporter:
-  type: 'stdout'
+  - type: 'stdout'
+  - type: 'json'
+    outFile: './reports/gherklin.json'
+  - type: 'html'
+    outFile: './reports/gherklin.html'
 featureDirectory: './tests/acceptance/features'
 rules:
   indentation:

@@ -257,6 +257,17 @@ By default, Gherklin outputs to STDOUT. You can change this by specifying the re
 
 Currently, the available reporters are STDOUT, HTML and JSON.
 
+You can report to multiple outputs at once by passing an array of reporter configs:
+
+```yaml
+reporter:
+  - type: 'stdout'
+  - type: 'html'
+    outFile: './reports/gherklin.html'
+  - type: 'json'
+    outFile: './reports/gherklin.json'
+```
+
 ## Reporter Configuration
 
 | key     | description                               |

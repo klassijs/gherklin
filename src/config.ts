@@ -31,8 +31,8 @@ export default class Config {
     // Configuration for each rule
     public rules?: RuleConfiguration
 
-    // Configuration for the reporter
-    public reporter?: ReporterConfig
+    // Configuration for the reporter (single or multiple)
+    public reporter?: ReporterConfig | ReporterConfig[]
 
     // The feature file to test
     public featureFile?: string
