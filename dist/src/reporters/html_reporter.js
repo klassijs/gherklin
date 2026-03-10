@@ -40,6 +40,7 @@ export default class HTMLReporter extends Reporter {
                 col: e.location.column ?? 1,
                 severity: e.severity === Severity.error ? 'error' : 'warn',
                 rule: e.rule,
+                message: e.message ?? '',
             }));
             values.fileList.push({
                 path: filePath,
