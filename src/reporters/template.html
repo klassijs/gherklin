@@ -222,6 +222,7 @@
     .pill.error { background: rgba(239, 68, 68, 0.2); color: var(--error); }
     .pill.warn { background: rgba(245, 158, 11, 0.2); color: var(--warn); }
     #issue-details tr:hover { background: var(--bg-card-hover); }
+    #issue-details td:nth-child(5) { max-width: 400px; overflow-wrap: break-word; }
   </style>
 </head>
 <body>
@@ -311,6 +312,7 @@
             <th>Col</th>
             <th>Severity</th>
             <th>Rule</th>
+            <th>Message</th>
           </tr>
         </thead>
         <tbody id="issue-details"></tbody>
@@ -334,7 +336,7 @@
         }
         wrap.classList.remove('empty');
         tbody.innerHTML = file.issues.map(function(issue) {
-          return '<tr><td>' + issue.line + '</td><td>' + issue.col + '</td><td><span class="pill ' + issue.severity + '">' + issue.severity + '</span></td><td>' + escapeHtml(issue.rule) + '</td></tr>';
+          return '<tr><td>' + issue.line + '</td><td>' + issue.col + '</td><td><span class="pill ' + issue.severity + '">' + issue.severity + '</span></td><td>' + escapeHtml(issue.rule) + '</td><td>' + escapeHtml(issue.message || '') + '</td></tr>';
         }).join('');
       }
 

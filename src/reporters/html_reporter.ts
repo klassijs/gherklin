@@ -11,7 +11,7 @@ interface FileReportItem {
   path: string
   errorCount: number
   warnCount: number
-  issues: Array<{ line: number; col: number; severity: string; rule: string }>
+  issues: Array<{ line: number; col: number; severity: string; rule: string; message: string }>
 }
 
 interface DashboardReport extends Report {
@@ -64,6 +64,7 @@ export default class HTMLReporter extends Reporter {
         col: e.location.column ?? 1,
         severity: e.severity === Severity.error ? 'error' : 'warn',
         rule: e.rule,
+        message: e.message ?? '',
       }))
 
       values.fileList.push({
