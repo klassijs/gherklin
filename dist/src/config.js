@@ -22,7 +22,7 @@ export default class Config {
     maxErrors;
     // Configuration for each rule
     rules;
-    // Configuration for the reporter
+    // Configuration for the reporter (single or multiple)
     reporter;
     // The feature file to test
     featureFile;

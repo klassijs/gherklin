@@ -13,7 +13,7 @@ export default class Config {
     featureDirectory?: string;
     maxErrors?: number;
     rules?: RuleConfiguration;
-    reporter?: ReporterConfig;
+    reporter?: ReporterConfig | ReporterConfig[];
     featureFile?: string;
     fix?: boolean;
     constructor(inlineConfig?: GherklinConfiguration);
