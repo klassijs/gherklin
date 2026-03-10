@@ -136,6 +136,7 @@ async function main() {
     if (args.reporter || args.outFile) {
         configWithDir.reporter = {
             ...configWithDir.reporter,
+            configDirectory: configWithDir.configDirectory ?? process.cwd(),
             ...(args.reporter && { type: args.reporter as 'html' | 'json' | 'stdout' }),
             ...(args.outFile && { outFile: args.outFile })
         };

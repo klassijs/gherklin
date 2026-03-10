@@ -1,4 +1,4 @@
-import { readFileSync, writeFileSync } from 'node:fs';
+import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
 import Handlebars from 'handlebars';
 import Reporter from './reporter.js';
@@ -88,7 +88,9 @@ export default class HTMLReporter extends Reporter {
         v.fileListJson = JSON.stringify(values.fileList).replace(/</g, '\\u003c');
         const html = template(values);
         const outDir = this.config.configDirectory ?? process.cwd();
-        writeFileSync(path.resolve(outDir, this.config.outFile || 'gherklin-report.html'), html);
+        const outPath = path.resolve(outDir, this.config.outFile || 'gherklin-report.html');
+        mkdirSync(path.dirname(outPath), { recursive: true });
+        writeFileSync(outPath, html);
     };
     getVersion() {
         try {
