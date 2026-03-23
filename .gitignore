@@ -3,6 +3,6 @@ package-lock.json
 cucumber-report.html
 tests/acceptance/tmp
 .idea
-.github
+# .github
 examples/*
 .DS_Store
