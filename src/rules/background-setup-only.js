@@ -53,7 +53,7 @@ var BackgroundSetupOnly = /** @class */ (function () {
                         return;
                     }
                     child.background.steps.forEach(function (step) {
-                        if (!['Given', '*'].includes(step.keyword.trim())) {
+                        if (!['Given', 'And', 'But', '*'].includes(step.keyword.trim())) {
                             document.addError(_this, "Background should only be used for set up. Found \"".concat(step.keyword.trim(), "\"."), step.location);
                         }
                     });

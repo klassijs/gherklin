@@ -159,9 +159,10 @@ var Indentation = /** @class */ (function () {
     };
     Indentation.prototype.fix = function (document) {
         return __awaiter(this, void 0, void 0, function () {
-            var expectedIndentation, numArg;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var expectedIndentation, numArg, featureTagExpected, _i, _a, tag, lineIndex, line, scenarioTagExpected, dataTableExpected;
+            var _b;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
                         expectedIndentation = this.schema.args;
                         numArg = function (key) {
@@ -174,9 +175,58 @@ var Indentation = /** @class */ (function () {
                                 document.lines[index].indentation = expected;
                             }
                         });
+                        featureTagExpected = numArg('featureTag');
+                        if (typeof featureTagExpected === 'number' && ((_b = document.feature.tags) === null || _b === void 0 ? void 0 : _b.length)) {
+                            for (_i = 0, _a = document.feature.tags; _i < _a.length; _i++) {
+                                tag = _a[_i];
+                                lineIndex = tag.location.line - 1;
+                                if (lineIndex >= 0 && lineIndex < document.lines.length) {
+                                    line = document.lines[lineIndex];
+                                    document.lines[lineIndex].indentation = featureTagExpected;
+                                    document.lines[lineIndex].text = (line.keyword + line.text).trim();
+                                    document.lines[lineIndex].keyword = '';
+                                }
+                            }
+                        }
+                        scenarioTagExpected = numArg('scenarioTag');
+                        if (typeof scenarioTagExpected === 'number') {
+                            document.feature.children.forEach(function (child) {
+                                var _a, _b;
+                                if (!((_b = (_a = child.scenario) === null || _a === void 0 ? void 0 : _a.tags) === null || _b === void 0 ? void 0 : _b.length))
+                                    return;
+                                for (var _i = 0, _c = child.scenario.tags; _i < _c.length; _i++) {
+                                    var tag = _c[_i];
+                                    var lineIndex = tag.location.line - 1;
+                                    if (lineIndex >= 0 && lineIndex < document.lines.length) {
+                                        var line = document.lines[lineIndex];
+                                        document.lines[lineIndex].indentation = scenarioTagExpected;
+                                        document.lines[lineIndex].text = (line.keyword + line.text).trim();
+                                        document.lines[lineIndex].keyword = '';
+                                    }
+                                }
+                            });
+                        }
+                        dataTableExpected = numArg('dataTable');
+                        if (typeof dataTableExpected === 'number') {
+                            document.feature.children.forEach(function (child) {
+                                var _a, _b;
+                                if (!((_b = (_a = child.scenario) === null || _a === void 0 ? void 0 : _a.steps) === null || _b === void 0 ? void 0 : _b.length))
+                                    return;
+                                child.scenario.steps.forEach(function (step) {
+                                    var _a, _b;
+                                    var rows = (_b = (_a = step.dataTable) === null || _a === void 0 ? void 0 : _a.rows) !== null && _b !== void 0 ? _b : [];
+                                    rows.forEach(function (row) {
+                                        var lineIndex = row.location.line - 1;
+                                        if (lineIndex >= 0 && lineIndex < document.lines.length) {
+                                            document.lines[lineIndex].indentation = dataTableExpected;
+                                        }
+                                    });
+                                });
+                            });
+                        }
                         return [4 /*yield*/, document.regenerate()];
                     case 1:
-                        _a.sent();
+                        _c.sent();
                         return [2 /*return*/];
                 }
             });

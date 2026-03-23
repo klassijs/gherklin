@@ -247,7 +247,7 @@ When the rule is loaded, this schema is used to verify the configuration value f
 ## Generating Custom Rules
 Gherklin comes with a generator script that you can use. Running the following will generate the skeleton for a new Rule class:
 ```shell
-pnpm exec tsx ./node_modules/.bin/gherklin-rule
+pnpm exec tsx ./src/bin/gherklin-rule.ts
 ```
 
 # Reporting

@@ -1,13 +1,11 @@
 #!/usr/bin/env node
-// ... your CLI code that imports from "gherklin" (which now points to dist)
 import fs from 'node:fs';
 import path from 'node:path';
 import { readFileSync } from 'node:fs';
 import { dirname, resolve as resolvePath } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { resolveConfig } from '../src/config/resolveConfig.js';
-// NOTE: adjust this import if Runner is exported from a different module in your fork
-import { Runner } from '../src/index.js';
+import { resolveConfig } from '../config/resolveConfig.js';
+import { Runner } from '../index.js';
 function parseArgs(argv) {
     const args = {};
     for (let i = 0; i < argv.length; i++) {
@@ -38,7 +36,6 @@ function parseArgs(argv) {
                 args.outFile = argv[++i];
                 break;
             default:
-                // ignore positional for now
                 break;
         }
     }
@@ -59,13 +56,11 @@ Options:
 `);
 }
 async function main() {
-    // const args = parseArgs(process.argv.slice(2));
     const args = parseArgs(process.argv.slice(2));
-    // If a working directory is specified, switch to it immediately.
     if (args.cwd) {
         const targetCwd = path.isAbsolute(args.cwd)
             ? args.cwd
-            : path.resolve(process.cwd(), args.cwd); // robust absolute path
+            : path.resolve(process.cwd(), args.cwd);
         if (!fs.existsSync(targetCwd) || !fs.statSync(targetCwd).isDirectory()) {
             console.error(`\n✖ The --cwd path does not exist or is not a directory:\n   ${targetCwd}\n\n` +
                 `Tips:\n` +
@@ -87,13 +82,13 @@ async function main() {
     }
     if (args.version) {
         const here = dirname(fileURLToPath(import.meta.url));
-        const pkg = JSON.parse(readFileSync(resolvePath(here, '..', 'package.json'), 'utf8'));
+        const pkg = JSON.parse(readFileSync(resolvePath(here, '..', '..', 'package.json'), 'utf8'));
         console.log(pkg.version);
         process.exit(0);
     }
     const { config, filepath } = await resolveConfig({
         enableXdg: !args.noXdg,
-        explicitPath: args.config
+        explicitPath: args.config,
     });
     if (!config) {
         console.error('No Gherklin config found. Add a gherklin.config.yaml (or .ts/.yml) in the project root or pass --config <path>.');
@@ -102,13 +97,12 @@ async function main() {
     const configWithDir = filepath
         ? { ...config, configDirectory: path.dirname(filepath) }
         : { ...config, configDirectory: process.cwd() };
-    // CLI overrides for reporter (so one command can add report without extra config file)
     if (args.reporter || args.outFile) {
         configWithDir.reporter = {
             ...configWithDir.reporter,
             configDirectory: configWithDir.configDirectory ?? process.cwd(),
             ...(args.reporter && { type: args.reporter }),
-            ...(args.outFile && { outFile: args.outFile })
+            ...(args.outFile && { outFile: args.outFile }),
         };
     }
     const runner = new Runner(configWithDir);

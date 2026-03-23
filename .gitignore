@@ -5,3 +5,4 @@ tests/acceptance/tmp
 .idea
 .github
 examples/*
+.DS_Store

@@ -2,7 +2,7 @@
   "compilerOptions": {
     "noEmit": false,
     "outDir": "dist",
-    "rootDir": ".",
+    "rootDir": "src",
 
     "target": "ES2022",
     "module": "NodeNext",
@@ -17,6 +17,6 @@
     "skipLibCheck": true,
     "strict": true
   },
-  "include": ["src/**/*.ts", "bin/**/*.ts"],
+  "include": ["src/**/*.ts"],
   "exclude": ["dist", "node_modules", "tests/**"]
 }

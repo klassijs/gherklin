@@ -222,6 +222,23 @@ export default class Indentation implements Rule {
             })
         }
 
+        // Step data tables (rows under Given/When/Then/And/But)
+        const dataTableExpected = numArg('dataTable')
+        if (typeof dataTableExpected === 'number') {
+            document.feature.children.forEach((child) => {
+                if (!child.scenario?.steps?.length) return
+                child.scenario.steps.forEach((step) => {
+                    const rows = step.dataTable?.rows ?? []
+                    rows.forEach((row) => {
+                        const lineIndex = row.location.line - 1
+                        if (lineIndex >= 0 && lineIndex < document.lines.length) {
+                            document.lines[lineIndex].indentation = dataTableExpected
+                        }
+                    })
+                })
+            })
+        }
+
         await document.regenerate()
     }
 }

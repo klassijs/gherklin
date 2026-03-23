@@ -23,7 +23,7 @@ export default class Runner {
     constructor(gherklinConfig?: GherklinConfiguration) {
         if (gherklinConfig) {
             // If CLI passed an inline config, create a Config from it.
-            // (bin/gherklin.ts now injects configDirectory when a file was resolved.)
+            // (src/bin/gherklin.ts injects configDirectory when a file is resolved.)
             this.config = new Config(gherklinConfig)
         }
     }
