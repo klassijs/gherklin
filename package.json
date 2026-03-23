@@ -13,13 +13,11 @@
     "gherkin",
     "linter"
   ],
-
   "files": [
     "dist/",
     "README.md",
     "LICENSE"
   ],
-
   "bin": {
     "gherklin": "dist/bin/gherklin.js"
   },
@@ -40,7 +38,7 @@
     "eslint:fix": "eslint --fix",
     "gherklin": "npx tsx ./src/bin/gherklin.ts",
     "clean": "rimraf dist",
-    "build": "pnpm run clean && tsc -p tsconfig.build.json && node -e \"require('fs').mkdirSync('dist/src/reporters', {recursive: true}); require('fs').copyFileSync('src/reporters/template.html', 'dist/src/reporters/template.html')\"",
+    "build": "pnpm run clean && tsc -p tsconfig.build.json && node -e \"require('fs').mkdirSync('dist/reporters', {recursive: true}); require('fs').copyFileSync('src/reporters/template.html', 'dist/reporters/template.html')\"",
     "prepublishOnly": "pnpm run build",
     "dev:cli": "tsx ./src/bin/gherklin.ts",
     "lint:features": "tsx ./src/bin/gherklin.ts",
@@ -57,6 +55,7 @@
   },
   "devDependencies": {
     "@cucumber/cucumber": "^11.0.1",
+    "@cucumber/messages": "^32.2.0",
     "@stylistic/eslint-plugin": "^3.1.0",
     "@types/chai": "^5.0.0",
     "@types/chai-as-promised": "^8.0.0",

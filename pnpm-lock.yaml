@@ -33,6 +33,9 @@ importers:
       '@cucumber/cucumber':
         specifier: ^11.0.1
         version: 11.3.0
+      '@cucumber/messages':
+        specifier: ^32.2.0
+        version: 32.2.0
       '@stylistic/eslint-plugin':
         specifier: ^3.1.0
         version: 3.1.0(eslint@9.39.4)(typescript@5.9.3)
@@ -152,6 +155,9 @@ packages:
 
   '@cucumber/messages@27.2.0':
     resolution: {integrity: sha512-f2o/HqKHgsqzFLdq6fAhfG1FNOQPdBdyMGpKwhb7hZqg0yZtx9BVqkTyuoNk83Fcvk3wjMVfouFXXHNEk4nddA==}
+
+  '@cucumber/messages@32.2.0':
+    resolution: {integrity: sha512-oYp1dgL2TByYWL51Z+rNm+/mFtJhiPU9WS03goes9EALb8d9GFcXRbG1JluFLFaChF1YDqIzLac0kkC3tv1DjQ==}
 
   '@cucumber/query@13.6.0':
     resolution: {integrity: sha512-tiDneuD5MoWsJ9VKPBmQok31mSX9Ybl+U4wqDoXeZgsXHDURqzM3rnpWVV3bC34y9W6vuFxrlwF/m7HdOxwqRw==}
@@ -1646,6 +1652,11 @@ snapshots:
       class-transformer: 0.5.1
       reflect-metadata: 0.2.2
       uuid: 11.0.5
+
+  '@cucumber/messages@32.2.0':
+    dependencies:
+      class-transformer: 0.5.1
+      reflect-metadata: 0.2.2
 
   '@cucumber/query@13.6.0(@cucumber/messages@27.2.0)':
     dependencies:
